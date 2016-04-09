@@ -6,7 +6,6 @@ Example [GitBook] website using GitLab Pages.
 
 This project uses an orphan branch (`pages`) to host the book. 
 This way, you can have your project's code in the `master` branch and use `pages` for accommodating only your website content.
-We wouldn't be able to have a `README.md` in the `master` branch with this instructions if we weren't deploying the site from `pages`.
 
 Learn more about GitLab Pages at https://pages.gitlab.io and the official
 documentation http://doc.gitlab.com/ee/pages/README.html.
