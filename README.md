@@ -4,7 +4,7 @@
 
 Example [GitBook] website using GitLab Pages.
 
-This project uses an orphan branch (`pages`) to host the book, since GitBook
+This project uses an orphan branch (`pages`) to [host the book][], since GitBook
 [expects a README.md](http://toolchain.gitbook.com/structure.html) file present
 in the root directory, and we already use one in the `master` branch  to provide
 information about GitBook on GitLab Pages. That way, you can have your project's
@@ -95,6 +95,7 @@ unless you want to contribute back to the upstream project.
 
 [ci]: https://about.gitlab.com/gitlab-ci/
 [GitBook]: https://www.gitbook.com/
+[host the book]: https://gitlab.com/pages/gitbook/tree/pages
 [install]: http://toolchain.gitbook.com/setup.html
 [documentation]: http://toolchain.gitbook.com
 [userpages]: http://doc.gitlab.com/ee/pages/README.html#user-or-group-pages
