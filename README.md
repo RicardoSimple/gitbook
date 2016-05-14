@@ -93,6 +93,10 @@ unless you want to contribute back to the upstream project.
     your static generator has a configuration option that needs to be explicitly
     set in order to serve static assets under a relative URL.
 
+----
+
+Forked from @virtuacreative
+
 [ci]: https://about.gitlab.com/gitlab-ci/
 [GitBook]: https://www.gitbook.com/
 [host the book]: https://gitlab.com/pages/gitbook/tree/pages
