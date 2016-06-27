@@ -34,20 +34,25 @@ This project's static Pages are built by [GitLab CI][ci], following the steps
 defined in [`.gitlab-ci.yml`](.gitlab-ci.yml):
 
 ```yaml
+# requiring the environment of NodeJS 4.2.2
 image: node:4.2.2
 
+# add 'node_modules' to cache for speeding up builds
 cache:
   paths: 
-    - node_modules/ 
+    - node_modules/ # Node modules and dependencies
 
 before_script:
-  - npm install gitbook-cli -g
-  - gitbook fetch latest
-  
+  - npm install gitbook-cli -g # install gitbook
+  - gitbook fetch latest # fetch latest stable version
+  #- gitbook fetch pre # fetch latest pre-release version
+  #- gitbook fetch 2.6.7 # fetch specific version
+
+# the 'pages' job will deploy and build your site to the 'public' path
 pages:
   stage: deploy
   script:
-    - gitbook build
+    - gitbook build # build to public path
   artifacts:
     paths:
       - public 
