@@ -1,5 +1,3 @@
-
-
 # requiring the environment of NodeJS 4.2.2
 image: node:4.2.2
 
