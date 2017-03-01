@@ -12,7 +12,7 @@ code in the `master` branch and use `pages` for accommodating only your website
 content.
 
 Learn more about GitLab Pages at https://pages.gitlab.io and the official
-documentation http://doc.gitlab.com/ee/pages/README.html.
+documentation https://docs.gitlab.com/ce/user/project/pages/.
 
 ---
 
@@ -107,5 +107,5 @@ Forked from @virtuacreative
 [host the book]: https://gitlab.com/pages/gitbook/tree/pages
 [install]: http://toolchain.gitbook.com/setup.html
 [documentation]: http://toolchain.gitbook.com
-[userpages]: http://doc.gitlab.com/ee/pages/README.html#user-or-group-pages
-[projpages]: http://doc.gitlab.com/ee/pages/README.html#project-pages
+[userpages]: https://docs.gitlab.com/ce/user/project/pages/introduction.html#user-or-group-pages
+[projpages]: https://docs.gitlab.com/ce/user/project/pages/introduction.html#project-pages
