@@ -4,13 +4,6 @@
 
 Example [GitBook] website using GitLab Pages.
 
-This project uses an orphan branch (`pages`) to [host the book][], since GitBook
-[expects a README.md](http://toolchain.gitbook.com/structure.html) file present
-in the root directory, and we already use one in the `master` branch  to provide
-information about GitBook on GitLab Pages. That way, you can have your project's
-code in the `master` branch and use `pages` for accommodating only your website
-content.
-
 Learn more about GitLab Pages at https://pages.gitlab.io and the official
 documentation https://docs.gitlab.com/ce/user/project/pages/.
 
@@ -39,7 +32,7 @@ image: node:4.2.2
 
 # add 'node_modules' to cache for speeding up builds
 cache:
-  paths: 
+  paths:
     - node_modules/ # Node modules and dependencies
 
 before_script:
@@ -55,9 +48,9 @@ pages:
     - gitbook build # build to public path
   artifacts:
     paths:
-      - public 
+      - public
   only:
-    - pages # this job will affect only the 'pages' branch
+    - master # this job will affect only the 'master' branch
 ```
 
 ## Building locally
@@ -65,7 +58,6 @@ pages:
 To work locally with this project, you'll have to follow the steps below:
 
 1. Fork, clone or download this project
-1. Track `pages` branch: `git checkout --track origin/pages`
 1. [Install][] GitBook `npm install gitbook-cli -g`
 1. Fetch GitBook's latest stable version `gitbook fetch latest`
 1. Preview your project: `gitbook serve`
