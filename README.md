@@ -45,7 +45,7 @@ before_script:
 pages:
   stage: deploy
   script:
-    - gitbook build # build to public path
+    - gitbook build . public # build to public path
   artifacts:
     paths:
       - public
