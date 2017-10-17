@@ -38,6 +38,7 @@ cache:
 before_script:
   - npm install gitbook-cli -g # install gitbook
   - gitbook fetch latest # fetch latest stable version
+  - gitbook install # add any requested plugins in book.conf
   #- gitbook fetch pre # fetch latest pre-release version
   #- gitbook fetch 2.6.7 # fetch specific version
 
