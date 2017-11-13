@@ -27,8 +27,8 @@ This project's static Pages are built by [GitLab CI][ci], following the steps
 defined in [`.gitlab-ci.yml`](.gitlab-ci.yml):
 
 ```yaml
-# requiring the environment of NodeJS 4.2.2
-image: node:4.2.2
+# requiring the environment of NodeJS 8.9.x LTS (carbon)
+image: node:8.9
 
 # add 'node_modules' to cache for speeding up builds
 cache:
