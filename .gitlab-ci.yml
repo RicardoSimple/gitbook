@@ -16,7 +16,7 @@ test:
   script:
     - gitbook build . public # build to public path
   only:
-    - branches # this job will affect only the 'master' branch
+    - branches # this job will affect every branch except 'master'
   except:
     - master
     
