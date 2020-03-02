@@ -27,8 +27,8 @@ This project's static Pages are built by [GitLab CI][ci], following the steps
 defined in [`.gitlab-ci.yml`](.gitlab-ci.yml):
 
 ```yaml
-# requiring the environment of NodeJS 8.9.x LTS (carbon)
-image: node:8.9
+# requiring the environment of NodeJS 10
+image: node:10
 
 # add 'node_modules' to cache for speeding up builds
 cache:
@@ -37,11 +37,18 @@ cache:
 
 before_script:
   - npm install gitbook-cli -g # install gitbook
-  - gitbook fetch latest # fetch latest stable version
+  - gitbook fetch 3.2.3 # fetch final stable version
   - gitbook install # add any requested plugins in book.json
-  #- gitbook fetch pre # fetch latest pre-release version
-  #- gitbook fetch 2.6.7 # fetch specific version
 
+test:
+  stage: test
+  script:
+    - gitbook build . public # build to public path
+  only:
+    - branches # this job will affect every branch except 'master'
+  except:
+    - master
+    
 # the 'pages' job will deploy and build your site to the 'public' path
 pages:
   stage: deploy
@@ -50,6 +57,7 @@ pages:
   artifacts:
     paths:
       - public
+    expire_in: 1 week
   only:
     - master # this job will affect only the 'master' branch
 ```
