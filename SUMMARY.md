@@ -1,5 +1,5 @@
 * [介绍](README.md)
-* [Java 基础语法](java/README.md)
+* [本节课的总结指令](gitsummary.md)
    * [Java变量](java/val.md)
    * [Java数据类型](java/dataType.md)
 * [Java 运算符](operator/README.md)
