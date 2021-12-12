@@ -47,5 +47,11 @@ mapper.writeValueAsString(name);得到一个字符串
 如果不存在目标文件那么将新建一个文件
 + 删除文件
 用FileUtils.delete(文件对象);
++ 可以将需要的实例化对象先private static
+### 静态代码块
+static{
+
+}
++ 
 
 
