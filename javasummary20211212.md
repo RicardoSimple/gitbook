@@ -21,4 +21,19 @@ FileUtils.readLines(文件对象名,"utf-8");返回的是数组/集合，
 + 用循坏
 分隔符 Stringname.spilt("分隔符");返回的是数组，最后要add();
 ### 读出的文件字符串转换为时间
-+ 用
++ 用LocalDateTime.parse()
+### json数据
++ 基本格式数据用键值对 name:value
++ 多条数据用逗号分开
++ 字符串在双引号中
++ 时间类型的注解
+@JsonDeserialize(using = LocalDateTimeDeserializer.class)
+@JsonSerialize(using = LocalDateTimeSerializer.class)
+@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss")
+private LocalDateTime gmtCreated;
+#### 转换为字符串
++ ObjectMapper mapper = new ObjectMapper();
+mapper.writeValueAsString(name);得到一个字符串
+#### 将json字符串转换为java对象
+先读文件，
++ mapper.readValue(stringname,User.class);后面的是转换的对象，返回的是后面转换为的类型
