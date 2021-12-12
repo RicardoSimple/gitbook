@@ -31,9 +31,18 @@ FileUtils.readLines(文件对象名,"utf-8");返回的是数组/集合，
 @JsonSerialize(using = LocalDateTimeSerializer.class)
 @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss")
 private LocalDateTime gmtCreated;
-#### 转换为字符串
+#### 转换为字符串（序列化）
 + ObjectMapper mapper = new ObjectMapper();
 mapper.writeValueAsString(name);得到一个字符串
-#### 将json字符串转换为java对象
+#### 将json字符串转换为java对象（反序列化）
 先读文件，
 + mapper.readValue(stringname,User.class);后面的是转换的对象，返回的是后面转换为的类型
+#### 将json读到的集合转为java对象（反序列化）
+也是先读文件然后得到字符串
++ mapper.readValue(stringname,new TypeRefrence<List<User>>);里面的是放行对象类型
+得到的是集合
+### 文件写
+先序列化为字符串，再建一个文件对象再存
++ FileUtils.writeStringToFile(jsonfile,strname,"utf-8");
+
+
