@@ -13,3 +13,6 @@
 File filename = new File("文件路径");文件路径为相对路径，.表示项目下为根目录
 也可写为File filename = new File("父路径","子路径");
 ### FileUtils 是Apache commons-io提供的
+FileUtils.readFileToString(文件名,"utf-8");
+//要用try/catch环绕，但是里面的语句块是独立的，接受的变量是String类型，若定义在外部需要初始化为null
+### 逐行读文件
