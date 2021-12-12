@@ -16,3 +16,9 @@ File filename = new File("文件路径");文件路径为相对路径，.表示�
 FileUtils.readFileToString(文件名,"utf-8");
 //要用try/catch环绕，但是里面的语句块是独立的，接受的变量是String类型，若定义在外部需要初始化为null
 ### 逐行读文件
+FileUtils.readLines(文件对象名,"utf-8");返回的是数组/集合，
+### 逐行读后转换为对象
++ 用循坏
+分隔符 Stringname.spilt("分隔符");返回的是数组，最后要add();
+### 读出的文件字符串转换为时间
++ 用
