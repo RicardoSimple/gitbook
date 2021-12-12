@@ -44,5 +44,8 @@ mapper.writeValueAsString(name);得到一个字符串
 ### 文件写
 先序列化为字符串，再建一个文件对象再存
 + FileUtils.writeStringToFile(jsonfile,strname,"utf-8");
+如果不存在目标文件那么将新建一个文件
++ 删除文件
+用FileUtils.delete(文件对象);
 
 
