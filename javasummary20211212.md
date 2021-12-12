@@ -52,6 +52,7 @@ mapper.writeValueAsString(name);得到一个字符串
 static{
 
 }
-+ 
++ 写在常量下面，静态代码块的代码会在程序启动时优先执行
+可以达到程序启动初始化文件，但是之前要判断文件是否存在，static里面不能用return
 
 
