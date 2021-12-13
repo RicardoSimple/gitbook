@@ -26,5 +26,9 @@ regbtn.setThemeName("tertiary");
 + 给button增加事件，
 + addButtonClickListener的对象是ClickEvent类型新建的方法要添加这个参数
 +   regBtn.addClickListener(buttonclickevent -> {onsign(buttonclickevent );});
++ 跳转
+layout中有getui的方法，是option对象，要先判断是否存在，用ifpresent()
++ getUI().ifPresent(ui ->{ui.navigate("/reg.html");});
+## login判断
 
 
