@@ -22,5 +22,9 @@ HorizontalLayout regLayout = new HorizontalLayout();
 #### 按键样式修改
 regbtn.setThemeName("tertiary");
 + 链接样式纯文本
-## 
+## 跳转页面
++ 给button增加事件，
++ addButtonClickListener的对象是ClickEvent类型新建的方法要添加这个参数
++   regBtn.addClickListener(buttonclickevent -> {onsign(buttonclickevent );});
+
 
