@@ -72,6 +72,8 @@ VaadinService.getCurrentResponse().addCookie(cookie);
 + 先得到Textfield里面的值,再将这个字符串导入checkbox里
         String todoval = todofield.getValue();
         Checkbox checkbox = new Checkbox(todoval);
+        todolist.add(checkbox);
+再添加到垂直布局内
     
 
 
