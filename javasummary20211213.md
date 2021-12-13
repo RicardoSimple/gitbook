@@ -68,7 +68,10 @@ VaadinService.getCurrentResponse().addCookie(cookie);
       if (cookie.getName().equals("username")){
                 
             }
-
+## checkbox 组件
++ 先得到Textfield里面的值,再将这个字符串导入checkbox里
+        String todoval = todofield.getValue();
+        Checkbox checkbox = new Checkbox(todoval);
     
 
 
