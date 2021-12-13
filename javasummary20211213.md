@@ -37,25 +37,38 @@ loginForm.addLoginListener(this::onlogin);
 String userName = event.getUsername();
         String passWord = event.getPassword();
 + 遍历用户名和密码
- for (User user : Reg.users) {
-            if (user.getUserName().equals(userName) && user.getPassword().equals(passWord) ){
-                Notification notification = new Notification();
-                notification.setDuration(3000);
-                notification.setText("login success");
-            }
-        }
+    
+     for (User user : Reg.users) {
+     if (user.getUserName().equals(userName) && user.getPassword().equals(passWord) ){
+     Notification notification = new Notification();
+     notification.setDuration(3000);
+     notification.setText("login success");
+     }}    
+
+
 + 发送错误（登录失败）
   loginForm.setError(true);
 ## 解决登录状态的持久处理
 + cookie创建
 一个很短的数据存储，用它来判断登录持久化
 Cookie cookie = new Cookie("Username",username);
+    
     前面的参数是数据名称，后面是数据
+
 + cookie 存储路径
 cookie.setPath("/");存储到项目根目录
 + 存储
 VaadinService.getCurrentResponse().addCookie(cookie);
-+ 
++ todo类实现新的接口implements AfterNavigationObserver
+导航会自动识别然后点击添加
+
++ 读取cookie
+ VaadinService.getCurrentRequest().getCookies();得到数组，然后遍历数组得到我们的数据
+      
+      if (cookie.getName().equals("username")){
+                
+            }
+
     
 
 
