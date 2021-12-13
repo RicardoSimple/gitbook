@@ -46,6 +46,13 @@ String userName = event.getUsername();
         }
 + 发送错误（登录失败）
   loginForm.setError(true);
+## 解决登录状态的持久处理
++ cookie创建
+一个很短的数据存储，用它来判断登录持久化
+Cookie cookie = new Cookie("Username",username);
+    前面的参数是数据名称，后面是数据
+    
+
 
 
 
