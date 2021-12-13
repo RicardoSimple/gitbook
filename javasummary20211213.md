@@ -51,6 +51,11 @@ String userName = event.getUsername();
 一个很短的数据存储，用它来判断登录持久化
 Cookie cookie = new Cookie("Username",username);
     前面的参数是数据名称，后面是数据
++ cookie 存储路径
+cookie.setPath("/");存储到项目根目录
++ 存储
+VaadinService.getCurrentResponse().addCookie(cookie);
++ 
     
 
 
