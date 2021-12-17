@@ -20,3 +20,9 @@ System.out.println(names[begin] + ":" + scores[begin]);
 begin++;
 print(names,scores,begin, total);
 }
+
+## 字符串
++ 字符串长度
+    stringname.length();
++ 取出字符串
+    stringname.charAt(下标);
