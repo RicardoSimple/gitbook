@@ -26,5 +26,5 @@ print(names,scores,begin, total);
     stringname.length();
 + 取出字符串
     stringname.charAt(下标);
-+ 去除多余的空格
++ 去除左右多余的空格
     new String string = stringname.trim();
