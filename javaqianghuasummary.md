@@ -50,4 +50,5 @@ print(names,scores,begin, total);
 + 字符串替换
 ```
     stringname.replaceAll("被替换","替换成");
+    返回新的字符串，如果后面的是空字符，那么可以起到删除的作用
 ```
