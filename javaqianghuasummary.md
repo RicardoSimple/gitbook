@@ -133,4 +133,24 @@ print(names,scores,begin, total);
   ```
     String time = df.format(now);
     ```
+ + 获取时间日期具体值
+   LocalDate time = LocalDate.now();
+```
+    // 得到当前时间所在年
+    int year = time.getYear();
+    System.out.println("当前年份 " + year);
 
+    // 得到当前时间所在月
+    int month = time.getMonth().getValue();
+    System.out.println("当前月份 " + month);
+
+    // 得到当前时间在这个月中的天数
+    int day = time.getDayOfMonth();
+    System.out.println("当前日 " + day);
+
+    // 得到当前时间所在星期数
+    int dayOfWeek = time.getDayOfWeek().getValue();
+    System.out.println("当前星期 " + dayOfWeek);
+    ```
+    https://ham.youkeda.com/articles/detail/5f37576b5e205f30b2c2b170
+    有些后面跟有getValue(),有些没有，因为getMonth()和getDayOfWeek()返回的是对象不是数字
