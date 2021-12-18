@@ -151,6 +151,6 @@ print(names,scores,begin, total);
     // 得到当前时间所在星期数
     int dayOfWeek = time.getDayOfWeek().getValue();
     System.out.println("当前星期 " + dayOfWeek);
-    ```
+ ```
     https://ham.youkeda.com/articles/detail/5f37576b5e205f30b2c2b170
     有些后面跟有getValue(),有些没有，因为getMonth()和getDayOfWeek()返回的是对象不是数字
