@@ -25,16 +25,26 @@ print(names,scores,begin, total);
 ```
 ## 字符串
 + 字符串长度
-    stringname.length();
+```
+ stringname.length();
+```
 + 取出字符串
+```
     stringname.charAt(下标);
+```
 + 去除左右多余的空格
+```
     new String string = stringname.trim();
+```
 + 查找字符串
+```
     Stringname.indexOf("索引的内容");
     + 如果找到了就返回索引值的坐标；找不到就返回-1；
+```
 + 查找下一个同样的内容
+```
     indexof();的参数可以有两个，第二个参数是开始查找的坐标起始值；将第一个查找到的**返回值+匹配字符长度**作为起始值
+```
 + 字符串拼接
  ```   
     new String str = stringname.substring();
