@@ -76,4 +76,34 @@ print(names,scores,begin, total);
 + 字符串比较
 ```
     stringname.equals("text");
+    返回布尔类型
     ```
++ 数字和字符串转化
+```  
+     字符串转数字
+     String text = "123";
+    // 转化字符串为数字
+    int a = Integer.parseInt(text);
+    ----
+    a = Integer.parseInt("100");
+    ```
+``` 
+    数字转字符串
+    方法1
+    public static void main(String[] args) {
+
+    int a = 100;
+    //使用空字符串相加数字，会自动变成字符串类型
+    String str = ""+a;
+    System.out.println(str);
+
+  }
+    方法2
+    public static void main(String[] args) {
+
+    int a = 100;
+    //使用valueOf强制把数字转化为字符串
+    String str = String.valueOf(a);
+    System.out.println(str);
+  }
+  ```
