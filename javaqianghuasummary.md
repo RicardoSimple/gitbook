@@ -5,11 +5,13 @@
 
     stringname.length;
 + 定义数组
-
+```
     // 声明一个 int 数组的变量，数组大小为6
     int[] numbers = new int[6];
+```
 + 函数返回类型包含数组
 + 多用递增
+ ```
     public static void print(String[] names, int[] scores, int begin, int total) {
 if (begin >= total) {
   return;
@@ -20,7 +22,7 @@ System.out.println(names[begin] + ":" + scores[begin]);
 begin++;
 print(names,scores,begin, total);
 }
-
+```
 ## 字符串
 + 字符串长度
     stringname.length();
@@ -34,14 +36,15 @@ print(names,scores,begin, total);
 + 查找下一个同样的内容
     indexof();的参数可以有两个，第二个参数是开始查找的坐标起始值；将第一个查找到的**返回值+匹配字符长度**作为起始值
 + 字符串拼接
-    
+ ```   
     new String str = stringname.substring();
     可以有两个参数，如果只有一个参数，那么后面的都会被拼接，
     两个参数的话会包含左边不包含右边
     返回的是字符串
+```
 + 字符串开始和结束内容判断 
-    
+```
     stringname.endWith(结尾字符串);返回布尔类型
-
+```
 + 字符串替换
 
