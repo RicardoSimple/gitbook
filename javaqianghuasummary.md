@@ -129,4 +129,8 @@ print(names,scores,begin, total);
 ```
     DateTimeFormatter df = DateTimeFormatter.ofPattern("yyyy/MM/dd");
     ```
+  + 转为字符串
+  ```
+    String time = df.format(now);
+    ```
 
