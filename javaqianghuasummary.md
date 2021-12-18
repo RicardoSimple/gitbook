@@ -68,6 +68,13 @@ print(names,scores,begin, total);
     stringname.split("分隔符");
     返回一个数组
 ```
+如果
+```
+    |
+    .
+    *
+    ```
+作为分隔符，需要在前面加上\\
 + 大小写转换
 ```
     stringname.toUpperCase();
