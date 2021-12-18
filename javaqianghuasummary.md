@@ -126,5 +126,7 @@ print(names,scores,begin, total);
   ### 日期时间和字符串转换
   + 日期格式化 DateTimeFormatter  包路径java.time.format.DateTimeFormatter
   + 创建格式化方法
-
+```
+    DateTimeFormatter df = DateTimeFormatter.ofPattern("yyyy/MM/dd");
+    ```
 
