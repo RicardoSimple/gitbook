@@ -45,6 +45,9 @@ print(names,scores,begin, total);
 + 字符串开始和结束内容判断 
 ```
     stringname.endWith(结尾字符串);返回布尔类型
+    stringname.startWith(开头字符串);返回布尔类型
 ```
 + 字符串替换
-
+```
+    stringname.replaceAll("被替换","替换成");
+```
