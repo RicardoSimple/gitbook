@@ -62,3 +62,18 @@ print(names,scores,begin, total);
     stringname.replaceAll("被替换","替换成");
     返回新的字符串，如果后面的是空字符，那么可以起到删除的作用
 ```
+## 字符串操作
++ 字符串分割
+```
+    stringname.split("分隔符");
+    返回一个数组
+```
++ 大小写转换
+```
+    stringname.toUpperCase();
+    stringname.toLowerCase();
+    ```
++ 字符串比较
+```
+    stringname.equals("text");
+    ```
