@@ -118,6 +118,11 @@ print(names,scores,begin, total);
   + 包的导入
   import 包名+类名;包名加类名组成了完整的包路径
 ## 日期类 LocalDate  包路径java.time.LocalDate
+```
+    LocalDate now = LocalDate.now();
+    system.out.println(now);//输出当前的时间
+    如果里面是now.toString();会将时间转为字符串输出，但是这两种结果都一样
+    ```
   ### 日期时间和字符串转换
   + 日期格式化 DateTimeFormatter  包路径java.time.format.DateTimeFormatter
   + 创建格式化方法
