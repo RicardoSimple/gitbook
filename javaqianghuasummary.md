@@ -120,6 +120,7 @@ print(names,scores,begin, total);
 ## 日期类 LocalDate  包路径java.time.LocalDate
 ```
     LocalDate now = LocalDate.now();
+    //以df格式输出时间
     system.out.println(now);//输出当前的时间
     如果里面是now.toString();会将时间转为字符串输出，但是这两种结果都一样
     ```
