@@ -199,3 +199,17 @@ LocalDate有一个plusDays(天数)的类执行天数相加
 判断是否是同一天，前，后
 isBefore，isAfter，isEqual
 返回的都是布尔类型
+# 包
+## 包的声明
+```
+package 包路径;
+```
+包路径是该java所在的目录，一个文件只有一个package语句，在最前
+```
+比如Hello.java的包路径
+com.youkeda.test.Hello.java
+或者
+com.youkeda.test.Hello
+省略了后缀名
+```
+
