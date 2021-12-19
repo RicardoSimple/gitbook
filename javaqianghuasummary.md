@@ -194,3 +194,7 @@ LocalDate有一个plusDays(天数)的类执行天数相加
     System.out.println("减1月：" + now.minusMonths(1));
     System.out.println("减1年：" + now.minusYears(1));
 ```
++ 两个日期时间的判断
+判断是否是同一天，前，后
+isBefore，isAfter，isEqual
+返回的都是布尔类型
