@@ -154,3 +154,18 @@ print(names,scores,begin, total);
  ```
     https://ham.youkeda.com/articles/detail/5f37576b5e205f30b2c2b170
     有些后面跟有getValue(),有些没有，因为getMonth()和getDayOfWeek()返回的是对象不是数字
++ 字符串转化为时间类型
+```
+LocalDate date2 = LocalDate.parse(date);
+```
+date是字符串，格式必须为yyyy-MM-dd HH:mm:ss
+如果格式不是这个，那就要借助DateTimeFormatter
+```
+String date = "2019/01/01";
+
+    DateTimeFormatter df = DateTimeFormatter.ofPattern("yyyy/MM/dd");
+
+    // 把字符串转化位 LocalDate 对象，并得到字符串匹配的日期
+    LocalDate date2 = LocalDate.parse(date,df);
+    //两个参数，后面是格式
+    ```
