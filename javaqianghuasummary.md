@@ -123,7 +123,7 @@ print(names,scores,begin, total);
     system.out.println(now);//输出当前的时间
     如果里面是now.toString();会将时间转为字符串输出，但是这两种结果都一样
     ```
-  ### 日期时间和字符串转换
+### 日期时间和字符串转换
   + 日期格式化 DateTimeFormatter  包路径java.time.format.DateTimeFormatter
   + 创建格式化方法
 ```
@@ -154,6 +154,7 @@ print(names,scores,begin, total);
  ```
     https://ham.youkeda.com/articles/detail/5f37576b5e205f30b2c2b170
     有些后面跟有getValue(),有些没有，因为getMonth()和getDayOfWeek()返回的是对象不是数字
+
 + 字符串转化为时间类型
 ```
 LocalDate date2 = LocalDate.parse(date);
@@ -169,3 +170,27 @@ String date = "2019/01/01";
     LocalDate date2 = LocalDate.parse(date,df);
     //两个参数，后面是格式
     ```
++ 时间日期的计算
+LocalDate有一个plusDays(天数)的类执行天数相加
+```
+    LocalDate time = LocalDate.parse(checkInTime);
+    // 使用 plusDays 添加天数，得到新的时间
+    LocalDate leaveTime = time.plusDays(days);
+```
+其他的类型计算
+```
+    LocalDate now = LocalDate.now();
+    System.out.println("当前：" + now.toString());
+
+    System.out.println("加法运算");
+    System.out.println("加1天：" + now.plusDays(1));
+    System.out.println("加1周：" + now.plusWeeks(1));
+    System.out.println("加1月：" + now.plusMonths(1));
+    System.out.println("加1年：" + now.plusYears(1));
+
+    System.out.println("减法运算");
+    System.out.println("减1天：" + now.minusDays(1));
+    System.out.println("减1周：" + now.minusWeeks(1));
+    System.out.println("减1月：" + now.minusMonths(1));
+    System.out.println("减1年：" + now.minusYears(1));
+```
