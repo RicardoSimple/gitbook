@@ -24,3 +24,15 @@
 不是以/开头的路径表示相对路径，以/开头的为绝对路径
 
 不输入路径打开的是默认路径
+### 简单api调用
+#### get请求无参数
+安装依赖库okhttp3
++ 安装方式，在pom.xml增加依赖
+```
+<!-- https://mvnrepository.com/artifact/com.squareup.okhttp3/okhttp -->
+<dependency>
+ <groupId>com.squareup.okhttp3</groupId>
+ <artifactId>okhttp</artifactId>
+ <version>4.1.0</version>
+</dependency>
+```
