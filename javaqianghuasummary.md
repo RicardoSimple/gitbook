@@ -227,5 +227,20 @@ public class House {
 ```
 
 + 类中定义的方法中，没有static的方法叫做对象方法；有static的方法叫做静态方法
+### 实例化对象
+new 对象;
+### 构造函数
+```
+public class House {
+    // 房子的颜色是绿色
+    public String color = "green";
+
+    // 自定义一个带 color 参数的构造函数
+    public House(String color){
+      this.color = color;
+    }
+}
+```
+
 
 
