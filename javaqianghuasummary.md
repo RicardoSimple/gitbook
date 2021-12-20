@@ -228,7 +228,7 @@ public class House {
 
 + 类中定义的方法中，没有static的方法叫做对象方法；有static的方法叫做静态方法
 ### 实例化对象
-new 对象;
+new 构造函数;
 ### 构造函数
 ```
 public class House {
@@ -240,6 +240,17 @@ public class House {
       this.color = color;
     }
 }
+```
+如果定义了新的构造函数，那么默认的无参数构造函数就失效了，但是如果想让默认的生效，那就可以再定义一个默认的构造函数
+```
+public House() {
+        
+    }
+
+    // 自定义一个带 color 参数的构造函数
+    public House(String color) {
+        this.color = color;
+    }
 ```
 
 
