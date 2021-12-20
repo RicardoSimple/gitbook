@@ -280,7 +280,14 @@ public long length()
 1. getPath();返回抽象路径名的字符串
 1. isAbsolutePath();测试是否为绝对路径名
 1. 
-
+### ArrayList
+实例化
+```
+// 这里的 Java 对象类型可以是任意的对象类型
+// 比如 String、Integer、House 等
+// 这里的 <> 是 Java 泛型的规范,记住这个语法就行了
+ArrayList<Java 对象类型> list = new ArrayList<>();
+```
 
 
 
