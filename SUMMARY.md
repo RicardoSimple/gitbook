@@ -1,7 +1,5 @@
 * [介绍](README.md)
 * [git的总结指令](gitsummary.md)
-   * [Java变量](java/val.md)
-   * [Java数据类型](java/dataType.md)
 * [Java 总结](javasummaryreason.md)
    * [Java第二章总结](javasummary20211207.md)
    * [Java第三章总结](javasummary20211208.md)
