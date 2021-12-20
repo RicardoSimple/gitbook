@@ -36,3 +36,29 @@
  <version>4.1.0</version>
 </dependency>
 ```
+##### 使用okhttp3完成页面请求
++ 实例化
+```
+OkHttpClient okHttpClient = new OkHttpClient();
+```
+
++ 执行调用
+调用之前先实例化一个request
+```
+Request request = new Request.Builder().url(url).build();
+```
+
+构建调用对象
+```
+Call call = okHttpClient.newCall(request);
+```
+
+最后执行调用
+call.execute()返回的是一个执行的结果的对象，需要转换成字符串
+```
+call.execute().body().string();
+```
+##### api
+api是应用程序接口，是预先定义的函数
+url本质上就是api
+
