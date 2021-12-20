@@ -289,5 +289,11 @@ public long length()
 ArrayList<Java 对象类型> list = new ArrayList<>();
 ```
 
++ add方法
+listname.add();
++ get/size方法
+size()获取长度，get(索引)；获取具体值
++ 增强for循环
+for( 集合变量的类型 变量名称 : 集合变量 )
 
 
