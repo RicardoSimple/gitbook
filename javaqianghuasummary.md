@@ -216,5 +216,16 @@ com.youkeda.test.Hello
 import 类路径
 ### 抽象时
 特征称为对象属性，行为成为对象方法
++ 即类或对象中定义的变量称为对象属性，前面有public关键字,代表公共变量
+```
+public class House {
+    // 房子的颜色是绿色
+    public String color = "green";
+    // 房子的卧室有2间
+    public int bedRooms = 2;
+}
+```
+
++ 类中定义的方法中，没有static的方法叫做对象方法；有static的方法叫做静态方法
 
 
