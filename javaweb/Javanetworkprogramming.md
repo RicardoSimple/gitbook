@@ -61,4 +61,6 @@ call.execute().body().string();
 ##### api
 api是应用程序接口，是预先定义的函数
 url本质上就是api
+#### get请求有参数
+
 
