@@ -295,5 +295,37 @@ listname.add();
 size()获取长度，get(索引)；获取具体值
 + 增强for循环
 for( 集合变量的类型 变量名称 : 集合变量 )
+### Map（映射）
+实例化
+```
+import java.util.Map;
+import java.util.HashMap;
+
+// key value 得是 Java 类型
+Map<key,value> map = new HashMap<>();
+```
++ 存储
+使用map.put(key,value)
+```
+Map<Integer,String> map = new HashMap<>();
+
+map.put(1,"Monday");
+map.put(2,"Tuesday");
+map.put(3,"Wednesday");
+map.put(4,"Thursday");
+map.put(5,"Friday");
+map.put(6,"Saturday");
+map.put(7,"Sunday");
+```
+因为key是Integer类型，所以泛型表示可以用Map<Integer,String>
++ Map也是集合类型数据，有size和for
++ 遍历Map
+```
+for (Map.Entry<Integer,String> entry : map.entrySet()){
+
+   System.out.println("Key = " + entry.getKey() +
+                  ", Value = " + entry.getValue());
+ }
+```
 
 
