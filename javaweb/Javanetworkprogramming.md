@@ -62,5 +62,6 @@ call.execute().body().string();
 api是应用程序接口，是预先定义的函数
 url本质上就是api
 #### get请求有参数
+只需把有参数的url直接传入方法中即可
 
 
