@@ -253,5 +253,34 @@ public House() {
     }
 ```
 
+### File对象
+实例化方法三种
+```
+// 实例化一个文件实例，指向到 d:/img/a.png 文件
+File file = new File("d:/img/a.png");
+//根据parent路径名字符串和child路径名字符串创建一个新 File 实例
+File(String parent, String child)
+
+//通过给定的父文件对象和子路径名字符串创建一个新的File实例
+File(File parent, String child)
+```
++ 得到文件的大小
+```
+// 返回字节数
+public long length()
+```
++ 计算机存储换算公式
+1kb=1024字节
+1mb=1024kb
+1gb=1024mb
++ File对象的其他方法
+1. getName();返回由此抽象路径表示的文件或目录名称
+1. getParent();返回父路径字符串，如果没有则返回null
+1. getParentFile();返回父路径的抽象路径名，没有则返回null
+1. getPath();返回抽象路径名的字符串
+1. isAbsolutePath();测试是否为绝对路径名
+1. 
+
+
 
 
