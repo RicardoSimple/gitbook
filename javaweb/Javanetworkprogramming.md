@@ -78,8 +78,12 @@ Request request = new Request.Builder().url(url).post(formBody).build();
 ```
 
 构建Request对象时用.post(formbody)，与api不同
-要用Map
 
+用for循环添加表单数据
+```
+for(String key:formData.keySet())
+{builder.add(key,formDate.get(key));}
+```
 
 
 
