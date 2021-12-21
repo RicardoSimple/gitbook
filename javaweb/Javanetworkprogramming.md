@@ -77,6 +77,9 @@ FormBody formBody = builder.build();
 Request request = new Request.Builder().url(url).post(formBody).build();
 ```
 
+构建Request对象时用.post(formbody)，与api不同
+要用Map
+
 
 
 
