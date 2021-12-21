@@ -63,5 +63,20 @@ api是应用程序接口，是预先定义的函数
 url本质上就是api
 #### get请求有参数
 只需把有参数的url直接传入方法中即可
+#### post表单
+提交数据至服务器进行增加，删除，修改操作都是post
+
+post操作数据放在表单中，不是url
++ 创建表单对象FormBody
+```
+Builder builder = new FormBody.Builder();
+// 设置数据，第一个参数是数据名，第二个参数是数据值
+builder.add("", "");
+FormBody formBody = builder.build();
+
+Request request = new Request.Builder().url(url).post(formBody).build();
+```
+
+
 
 
