@@ -86,6 +86,29 @@ for(String key:formData.keySet())
 ```
 
 #### post json数据
+post的参数不是formbody,改为requestbody
+
+[json](https://ham.youkeda.com/articles/detail/5f3757fd5e205f30b2c2b1f9)
+
+FastJson依赖
+```
+<!-- 在下列地址查询最新的版本：https://mvnrepository.com/artifact/com.alibaba/fastjson -->
+<dependency>
+    <groupId>com.alibaba</groupId>
+    <artifactId>fastjson</artifactId>
+    <version>1.2.62</version>
+</dependency>
+```
+
+
+
++ 先定义一个最终提交的常量数据
+```
+pravite static final MediaType JSON_TYPE = MediaType.parse("application/json;charset=utf-8");
+```
+
+utf-8是码表，[查询](https://www.cnblogs.com/csguo/p/7402034.html)
+
 
 
 
