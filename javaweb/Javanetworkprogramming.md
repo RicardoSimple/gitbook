@@ -118,5 +118,26 @@ utf-8是码表，[查询](https://www.cnblogs.com/csguo/p/7402034.html)
 
 [更多状态码](https://ham.youkeda.com/articles/detail/5f3758675e205f30b2c2b2a4)
 
+取得状态码的代码
+```
+call.execute().code()
+```
+
+但是即要读取相应内容，又要读取状态，而且不是再次请求，那么代码应该优化为
+```
+import okhttp3.Response;
+
+// 执行请求
+Response rep = call.execute();
+// 获取响应状态码
+int code = rep.code();
+// 获取响应内容
+String content = rep.body().string();
+
+```
+
+就是将原本的call.excute()保存为一次结果，再获取其中的内容
+
+
 
 
