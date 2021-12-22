@@ -146,6 +146,14 @@ response.body().bytes();
 
 返回二进制编码，再用软件解析
 
+#### response json
+json是一段文本，也就是java的字符串，要解析内容需转换为java对象
+```
+JSON.parseObject()
+```
+
+
+
 
 
 
