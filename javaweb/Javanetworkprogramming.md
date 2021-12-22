@@ -112,6 +112,11 @@ utf-8是码表，[查询](https://www.cnblogs.com/csguo/p/7402034.html)
 [完整代码](javaweb/postjson.md)
 
 #### response 网页
+除了返回值，还经常关注http状态码
+
+常见状态码200表示成功，404表示出错
+
+[更多状态码](https://ham.youkeda.com/articles/detail/5f3758675e205f30b2c2b2a4)
 
 
 
