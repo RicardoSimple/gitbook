@@ -137,6 +137,14 @@ String content = rep.body().string();
 ```
 
 就是将原本的call.excute()保存为一次结果，再获取其中的内容
+#### response 非文本文件
+
+非文本文件获取不是用string()方法，而是用
+```
+response.body().bytes();
+```
+
+返回二进制编码，再用软件解析
 
 
 
