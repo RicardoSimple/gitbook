@@ -109,6 +109,9 @@ pravite static final MediaType JSON_TYPE = MediaType.parse("application/json;cha
 
 utf-8是码表，[查询](https://www.cnblogs.com/csguo/p/7402034.html)
 
+[完整代码](javaweb/postjson.md)
+
+#### response 网页
 
 
 
