@@ -153,7 +153,39 @@ JSON.parseObject()
 ```
 
 #### 解析json对象
+普通的直接转换，遇到多次嵌套的
+```
+{
+  "code": 0,
+  "data": {
+    "ip": "117.89.35.58",
+    "country": "中国",
+    "area": "",
+    "region": "江苏",
+    "city": "南京",
+    "county": "XX",
+    "isp": "电信",
+    "country_id": "CN",
+    "area_id": "",
+    "region_id": "320000",
+    "city_id": "320100",
+    "county_id": "xx",
+    "isp_id": "100017"
+  }
+}
+```
 
+就转换后取出内部的再转换
+
+```
+Map contentObj = JSON.parseObject(content, Map.class);
+Map dataObj = (Map)contentObj.get("data");
+String city = (String)dataObj.get("city");
+```
+
+[json格式化工具](http://www.ab173.com/json/jsonviewernew.php)
+
+#### user-agent
 
 
 
