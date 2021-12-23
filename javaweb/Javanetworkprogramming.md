@@ -200,6 +200,12 @@ Request request = new Request.Builder()
     .build();
 ```
 addheader第一个参数是名称，第二个参数是值
+##### referer
+图片防盗链
+
+在headers中加入referer信息
+
+在浏览器能访问是因为没有了“来源”
 
 
 
