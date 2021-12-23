@@ -215,8 +215,23 @@ Request request = new Request.Builder()
     .build();
 ```
 
-可把referer的信息设置为本站的信息
+可把referer的信息设置为本站的信息（相同的域名）
 
 有时图片请求的相应码为200，表示请求成功，但是最终相应地址却不一样，是因为服务器判断没有权限访问，做了特殊处理
 
+##### host
+host也是headers的信息之一
 
+host表示当前请求的域名，虽然域名有时已经存在于url中，但是使用代理服务器或者url中不写域名而是写ip地址请求时，设置host就很有用
+
+具体的[host文档](https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Headers/Host)
+
++ 设置Host
+```
+Request request = new Request.Builder()
+    .url(url)
+    .addHeader("Host", "www.douban.com")
+    .build();
+```
+
+host的值是不带协议的域名
