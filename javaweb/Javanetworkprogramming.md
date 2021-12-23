@@ -189,8 +189,17 @@ String city = (String)dataObj.get("city");
 有时网站的会未成功，因为网站会校验是否是真实的浏览器发出的请求，api服务器认为不是真实的浏览器
 + 判断是否是真实的浏览器，需要从HTTP消息头（Headers）中取得（User-Agent）
 [HTTP Headers文档](https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Headers)
-
-
+##### 代码中加上User-Agent信息来模拟真实浏览器发出的请求
++ 模拟win7 + chrome：
+    Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/535.1 (KHTML, like Gecko) Chrome/14.0.835.163 Safari/535.1
++ 加入header信息
+```
+Request request = new Request.Builder()
+    .url(url)
+    .addHeader("User-Agent", "")
+    .build();
+```
+addheader第一个参数是名称，第二个参数是值
 
 
 
