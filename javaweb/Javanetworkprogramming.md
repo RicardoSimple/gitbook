@@ -186,6 +186,9 @@ String city = (String)dataObj.get("city");
 [json格式化工具](http://www.ab173.com/json/jsonviewernew.php)
 
 #### user-agent
+有时网站的会未成功，因为网站会校验是否是真实的浏览器发出的请求，api服务器认为不是真实的浏览器
++ 判断是否是真实的浏览器，需要从HTTP消息头（Headers）中取得（User-Agent）
+[HTTP Headers文档](https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Headers)
 
 
 
