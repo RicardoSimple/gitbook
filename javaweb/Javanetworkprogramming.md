@@ -207,6 +207,16 @@ addheader第一个参数是名称，第二个参数是值
 
 在浏览器能访问是因为没有了“来源”
 
++ 加入referer
+```
+Request request = new Request.Builder()
+    .url(url)
+    .addHeader("Referer", "https://ham.youkeda.com/course/j14/0")
+    .build();
+```
+
+可把referer的信息设置为本站的信息
+
 
 
 
