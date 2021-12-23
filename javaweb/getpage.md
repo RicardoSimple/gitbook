@@ -17,3 +17,8 @@ public String getContent(String url) {
 
 ```
 
+### 打印最终相应的url
+```
+response.request().url().toString()
+```
+需要前面有定义的response
