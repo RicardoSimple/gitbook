@@ -235,3 +235,39 @@ Request request = new Request.Builder()
 ```
 
 host的值是不带协议的域名
+
+#### 下载文件
+##### 写入文本文件
+```
+import java.io.File;
+import java.io.FileWriter;
+
+// 文件对象
+File file = new File("foo.txt");
+
+// 写入内容
+FileWriter fileWritter = new FileWriter(file.getName());
+fileWritter.write(content);
+
+// 关闭
+fileWritter.close();
+```
+
+##### 写入二进制文件
+```
+import java.io.File;
+import java.io.FileOutputStream;
+
+// 文件对象
+File file = new File("china-city-list.xlsx");
+
+// 写文件
+FileOutputStream fos = new FileOutputStream(file);
+fos.write(data);
+
+// 必须刷新并关闭
+fos.flush();
+fos.close();
+```
+需要用FileOutputStream类，必须执行刷新，关闭
+data 是byte[]类型
