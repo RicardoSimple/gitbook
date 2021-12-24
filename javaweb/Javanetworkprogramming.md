@@ -309,4 +309,26 @@ for (Map<Integer, String> rowData : sheetDatas) {
 + 自动转换为类
 如果每一行的含义不清楚，或其他情况，或其类型经常变化的的话，用Map类型表示每一行
 
-但是如果知道每一行的含义，
+但是如果知道每一行的含义，用自定义类比较好
+```
+import com.alibaba.excel.EasyExcel;
+import java.util.List;
+
+// 读取第一个sheet
+List<DemoData> sheetDatas = EasyExcel.read("xzq_201907.xlsx").head(DemoData.class).sheet(0).doReadSync();
+```
+
+```
+// 属性定义的顺序必须与列顺序保持一致
+public class DemoData {
+  private String code1;
+  private String city1;
+  private String code2;
+  private String city2;
+  private String code3;
+  private String city3;
+}
+```
+
+EasyExcel.XXXXXX.doReadSync()无论是什么类型，返回的都是list类型
+
