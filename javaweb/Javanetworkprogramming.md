@@ -271,3 +271,42 @@ fos.close();
 ```
 需要用FileOutputStream类，必须执行刷新，关闭
 data 是byte[]类型
+
+##### 解析excel
++ easyexecl是能快速操作excel文件的库
+要先添加依赖
+```
+<dependency>
+  <groupId>com.alibaba</groupId>
+  <artifactId>easyexcel</artifactId>
+  <version>2.1.6</version>
+</dependency>
+```
+
+excel是多sheet的模式，所以数据的位置是sheet->行->列
+
+
+电脑中第一个sheet第一行第一列的位置是(0,0,0)
+
+解析代码
+```
+import com.alibaba.excel.EasyExcel;
+import java.util.Map;
+import java.util.List;
+
+// 读取第一个sheet
+List<Map<Integer, String>> sheetDatas = EasyExcel.read("xzq_201907.xlsx").sheet(0).doReadSync();
+// List 中每个元素表示一行
+for (Map<Integer, String> rowData : sheetDatas) {
+  // Map 中用序号指代每一列
+  for (Integer index : rowData.keySet()) {
+    // 列值
+    String columnValue = rowData.get(index);
+  }
+}
+```
+
++ 自动转换为类
+如果每一行的含义不清楚，或其他情况，或其类型经常变化的的话，用Map类型表示每一行
+
+但是如果知道每一行的含义，
