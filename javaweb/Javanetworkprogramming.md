@@ -332,3 +332,15 @@ public class DemoData {
 
 EasyExcel.XXXXXX.doReadSync()无论是什么类型，返回的都是list类型
 
+##### cookie
+如果文件或者网站要求登录才能访问，就要学习cookie的知识
+
+cookie是储存在浏览器网站的一段文本文件，以key=value形式存放，多条数据之间用;隔开
+
+准备  先找到登录后的cookie
+
+[谷歌开发者工具](https://www.cnblogs.com/yaoyaojing/p/9530728.html)
+
+复制cookie的值，然后用addHeader赋值给cookie
+
+
