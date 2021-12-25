@@ -343,4 +343,5 @@ cookie是储存在浏览器网站的一段文本文件，以key=value形式存�
 
 复制cookie的值，然后用addHeader赋值给cookie
 
+如果返回值404，是因为cookie是有有效期的
 
