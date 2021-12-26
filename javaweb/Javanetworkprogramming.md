@@ -345,3 +345,31 @@ cookie是储存在浏览器网站的一段文本文件，以key=value形式存�
 
 如果返回值404，是因为cookie是有有效期的
 
+##### session
+cookie的弊端是cookie是临时的，要登录再获取相关信息，可以用session来解决这个问题
+
+```
+ // 用 CookieJar 实现 cookie 的存储，便于登录后请求其它 URL 可以复用
+  private static final OkHttpClient okHttpClient = new OkHttpClient.Builder()
+      .cookieJar(new CookieJar() {
+        private final HashMap<String, List<Cookie>> cookieStore = new HashMap<>();
+
+        @Override
+        public void saveFromResponse(HttpUrl url, List<Cookie> cookies) {
+          cookieStore.put("mtime.com", cookies);
+          System.out.println("[saveFromResponse]url.host()=" + url.host());
+        }
+
+        @Override
+        public List<Cookie> loadForRequest(HttpUrl url) {
+          System.out.println("[loadForRequest]url.host()=" + url.host());
+          List<Cookie> cookies = cookieStore.get("mtime.com");
+          return cookies != null ? cookies : new ArrayList<>();
+        }
+      })
+      .build();
+```
+
+[匿名类](https://codeserver.youkeda.com/docs/java/-/wikis/Java%E5%8C%BF%E5%90%8D%E7%B1%BB)
+
+在login.api中找信息，有name和password
