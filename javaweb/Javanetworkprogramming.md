@@ -373,3 +373,13 @@ cookie的弊端是cookie是临时的，要登录再获取相关信息，可以�
 [匿名类](https://codeserver.youkeda.com/docs/java/-/wikis/Java%E5%8C%BF%E5%90%8D%E7%B1%BB)
 
 在login.api中找信息，有name和password
+
+##### 复用session
+讲okHttpClient进行重构，不再定义为变量，改为类变量
+```
+private static final OkHttpClient okHttpClient
+```
+
+### SMTP
+
+
