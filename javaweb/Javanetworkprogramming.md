@@ -381,5 +381,11 @@ private static final OkHttpClient okHttpClient
 ```
 
 ### SMTP
+SMPT是一个简单的基于文本的文件传输协议，在这个协议可以指定一条消息和一个或多个邮件接收者，然后进行邮件传输。
 
+和HTTP协议类似，
 
+协议+服务器地址  就组成一个邮件访问方式，比如：
+
+qq邮箱：  smtp.qq.com
+163邮箱： smtp.163.com
