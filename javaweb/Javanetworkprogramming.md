@@ -440,7 +440,7 @@ public class MailClient {
       MimeMessage message = new MimeMessage(session);
       //设置邮件的发件人
       message.setFrom(new InternetAddress("xxxxxxx@qq.com"));
-      //2.设置邮件的收件人
+      //2.设置邮件的收件人，可多个，用逗号隔开
       message.setRecipients(Message.RecipientType.TO, "xxxxxxx@qq.com");
       //设置邮件的主题
       message.setSubject("通过javamail发出！！！");
