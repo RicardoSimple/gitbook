@@ -18,3 +18,32 @@
 而猜数字的时间复杂度会随之增加，记作  **对数时间——O(log(N))**
 
 只需关注for循环的部分及嵌套
+
+二分法代码(数组有序)
+```
+public static int find(int[] array, int aim) {
+    // 初始化left = 最左侧, right = 最右侧
+    int left = 0;
+    int right = array.length - 1;
+
+    // 当left > right则表示遍历完成
+    while (left <= right) {
+        // 获取中间的值
+        int middle = (left + right) / 2;
+        int middleValue = array[middle];
+        if (middleValue == aim) {
+            // 已经找到目标
+            return middle;
+        } else if (middleValue < aim) {
+            // 目标在middle的右侧，重置left
+            left = middle + 1;
+        } else {
+            // 目标在middle的左侧，重置right
+            right = middle - 1;
+        }
+    }
+    return -1;
+}
+```
+
+
