@@ -157,6 +157,110 @@ public static void bubbleSort(int[] array) {
 ```
 
 + 插入排序
+重点在插入，每次抽离一个元素当作临时元素，依次比较和移动之后的其他元素，最终将这个临时元素插入都对应的位置
+
+核心规则：
+```
+1. 在第一轮，抽离数组末尾倒数第二个元素，作为临时元素
+2. 用临时元素和数组后面的元素进行对比：如果后面的元素小于临时元素，则后面的元素左移
+3. 如果后面的元素大于临时元素，或者已经移动到数组末尾，则将临时元素插入到空隙
+4. 重复上述步骤，完成排序
+```
+
+时间复杂度
+最好的情况：每次比较都不用移动 O(N)
+最坏的情况：每次比较都要移动O(N²)
+
+所以排序的选择，如果数组内本身有很多元素是已经有顺序的那么选择插入排序就很方便
+
+```
+// 插入排序
+  public static void insertSort(int[] array) {
+    int temp,j;
+    for(int i=0;i< array.length-1;i++)
+    {
+      temp = array[array.length-2-i];
+      for (j= array.length-1-i;j< array.length;j++) {
+        if (temp > array[j]) {
+          array[j-1]=array[j];
+          if (j== array.length-1)
+          {
+            array[j]=temp;
+          }
+        } else {
+          array[j-1]=temp;
+          break;
+        }
+      }
+    }
+  }
+```
+
++ 插入排序进阶--二分插入排序
+
+![理解](https://style.youkeda.com/img/course/a1/4/4-1.svg)
+
+寻找插入的位置可用二分查找法
+查找插入下标代码：
+```
+// 查找应该插入的索引位置
+public static int searchIndex(int[] array, int left, int right, int aim) {
+    // 循环查找节点位置
+    while (left < right) {
+        int middle = (left + right) / 2;
+        int value = array[middle];
+        if (value < aim) {
+            left = middle + 1;
+        } else {
+            right = middle - 1;
+        }
+    }
+    // #1. 如果最终元素仍然大于目标元素，则将索引位置往左边移动一个
+    if(array[left] > aim){
+        return left -1;
+    }
+    // 否则就是当前位置
+    return left;
+}
+```
+
+所以排序优化：
+```
+// 插入排序
+public static void insertSort(int[] array) {
+    // 从倒数第二位开始，遍历到底0位，遍历 N-1 次
+    for (int i = array.length - 2; i >= 0; i--) {
+        // 存储当前抽离的元素
+        int temp = array[i];
+        int index = searchIndex(array, i + 1, array.length - 1, temp);
+
+        // #1. 根据插入的索引位置，进行数组的移动和插入
+        int j = i + 1;
+        while (j <= index) {
+            array[j - 1] = array[j];
+            j++;
+        }
+        array[j - 1] = temp;
+    }
+}
+```
+
+### 递归
+阶乘：
+可简单理解为
+f(1) = 1
+f(n) = f(n-1) * n
+```
+public static int factorial(int n) {
+    //#1. 当 n = 1 时，递归结束
+    if (n == 1) {
+        return 1;
+    }
+    //#2. 把 factorial(n - 1) 的结果和 n 相乘，剩下的交给 factorial(n - 1) 来解决。
+    return n * factorial(n - 1);
+}
+```
+
 
 
 
