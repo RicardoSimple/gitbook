@@ -46,4 +46,43 @@ public static int find(int[] array, int aim) {
 }
 ```
 
+重复问题
+
+遍历下标加1，代码：
+```
+public static ArrayList<Integer> repeat(int[] array) {
+    ArrayList<Integer> result = new ArrayList<>();
+    int[] exists = new int[11];
+    for (int i = 0; i < array.length; i++) {
+        int value = array[i];
+        // 只有当前位置已经为1，标示重复，并且输出，>1情况则不输出了
+        if (exists[value] == 1) {
+            result.add(value);
+        }
+        // 用exists标示记录
+        exists[value]++;
+    }
+    return result;
+}
+```
+
+### 数组
+和c语言差不多
+
+数组第N个元素的地址计算：
+```
+// 第N个元素地址
+start_address + item_size * (N - 1)
+```
+
+所以数组访问的时间复杂度是O(1)
+
+而且为了方便内存地址的计算，(start_address + item_size * 0)第一个元素的地址
+
+所以起始下标为0
+
+
+
+
+
 
