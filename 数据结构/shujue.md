@@ -277,6 +277,20 @@ public static int factorial(int n) {
 4. 配合递归公式，继续往前推进
 5. 最后实现完善代码
 ```
++ 斐波那契数列
+![fib](https://qgt-document.oss-cn-beijing.aliyuncs.com/PY1/10/%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E6%95%B0%E5%88%97.png?x-oss-process=image/resize,w_800/watermark,image_d2F0ZXJtYXNrLnBuZz94LW9zcy1wcm9jZXNzPWltYWdlL3Jlc2l6ZSx3XzEwMA==,t_60,g_se,x_10,y_10)
+
+代码：
+```
+public static int fibonacci(int n) {
+    if(n<=1){
+      return n;
+    }
+    else {
+      return fibonacci(n-1)+fibonacci(n-2);
+    }
+```
+
 
 
 
