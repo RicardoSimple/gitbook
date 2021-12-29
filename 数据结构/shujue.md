@@ -92,6 +92,75 @@ java数据结构ArrayList就是用数组作为底层实现的
 + 中部删除
 
 ### 排序
++ 冒泡排序
+代码：
+```
+// 冒泡排序
+public static void bubbleSort(int[] array) {
+    // 1. 每次循环，都能冒泡出剩余元素中最大的元素，因此需要循环 array.length 次
+    for (int i = 0; i < array.length; i++) {
+        // 2. 每次遍历，只需要遍历 0 到 array.length - i - 1中元素，因此之后的元素都已经是最大的了
+        for (int j = 0; j < array.length - i - 1; j++) {
+            //3. 交换元素
+            if (array[j] > array[j + 1]) {
+                int temp = array[j + 1];
+                array[j + 1] = array[j];
+                array[j] = temp;
+            }
+        }
+    }
+}
+```
+时间复杂度O(n²)
++ 选择排序
+重点在选择，每次在剩余数组中选择最大或最小的数，存在数组的一端
+
+核心规则
+```
+1. 利用两个变量，一个存储当前的最大值，一个存储当前最大值的索引
+2. 依次比较后面的元素，如果发现比当前最大值大，则更新最大值，并且更新最大值所在的索引
+3. 直到遍历结束，将最大值放在数组的最右边，也就是交换最大值和最右端的元素
+4. 重复上述步骤
+```
+时间复杂度O(n²)
+
+虽然冒泡排序和选择排序的时间复杂度一样，但是实际应用中选择排序的速度比冒泡排序快，因为冒泡排序需要频繁交换数据，但是选择排序一次遍历只需要交换一次
+
+所以真实速度选择排序要快一倍
+
+代码：
+```
+ public static void selectSort(int[] array) {
+    int index=0;
+    int max = array[0];
+    for (int i=0;i< array.length;i++)
+    {
+      for (int j=0;j< array.length-i;j++)
+      { if (max<array[j]){
+          index = j;
+          max = array[index];
+        }}
+    //不判断就会出错
+      if(index!= array.length-i-1){
+        max = array[array.length-i-1];
+        array[array.length-i-1]=array[index];
+        array[index]=max;
+      }
+      else
+      {
+        index = 0;
+        max = array[0];
+      }
+
+    }
+  }
+```
+
++ 插入排序
+
+
+
+
 
 
 
