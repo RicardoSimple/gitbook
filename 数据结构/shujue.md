@@ -246,7 +246,7 @@ public static void insertSort(int[] array) {
 ```
 
 ### 递归
-阶乘：
++ 阶乘：
 可简单理解为
 f(1) = 1
 f(n) = f(n-1) * n
@@ -260,6 +260,10 @@ public static int factorial(int n) {
     return n * factorial(n - 1);
 }
 ```
+就是求f(n)时，假定f(n-1)已知
+
++ 汉诺塔
+
 
 
 
