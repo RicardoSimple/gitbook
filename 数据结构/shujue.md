@@ -81,6 +81,18 @@ start_address + item_size * (N - 1)
 
 所以起始下标为0
 
+java数据结构ArrayList就是用数组作为底层实现的
+
+#### 插入和删除
++ 尾部插入
+直接加  array[size]
++ 中部插入
+
++ 尾部删除
++ 中部删除
+
+### 排序
+
 
 
 
