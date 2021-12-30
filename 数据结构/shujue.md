@@ -291,6 +291,33 @@ public static int fibonacci(int n) {
     }
 ```
 
+将上次的二分插入查找的searchindex部分改为递归函数
+```
+  public static int searchIndex(int[] array, int left, int right, int aim) {
+      int middle = (left + right) / 2;
+      int value = array[middle];
+      if (left>=right){
+        if (array[left]>aim)
+        {
+          return left-1;
+        }
+        else return left;
+      }
+      else{
+        if (value<aim)
+        {
+          return searchIndex(array,middle+1,right,aim);
+        }
+        else
+        {
+          return searchIndex(array,left,middle-1,aim);
+        }
+      }
+
+
+  }
+```
+
 
 
 
