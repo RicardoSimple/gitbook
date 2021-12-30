@@ -380,7 +380,18 @@ public static int[] mergeSort(int[] array) {
 
 ![chaifen](https://style.youkeda.com/img/course/a1/5/4-5.svg)
 
-治的代码实现：
+治的代码实现：对于两个已经排好序的数组进行排序
+小的相比较然后把较小的放入数组，然后索引移动(被放入的数所在的数组)，再进行比较
+第一步：
+![diyibu](https://style.youkeda.com/img/course/a1/5/4-3.svg)
+
+第二步：
+![dierbu](https://style.youkeda.com/img/course/a1/5/4-4.svg)
+
+
+时间复杂度和二分法类似，O(log(N)),而且速度稳定
+
+代码实现：
 
 
 
