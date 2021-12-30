@@ -318,6 +318,69 @@ public static int fibonacci(int n) {
   }
 ```
 
+##### 归并排序，分治思想
+![分治](https://style.youkeda.com/img/course/a1/5/4-2.svg)
+步骤：
+```
+1. 分：二分法拆分数组，直到每个数组里面只剩一个元素
+2. 治：将拆分的数组合并并且在合并的时候保证数组是有序的
+分的代码实现：
+如何递归进行数组拆分，如何用原始数组创建两个子数组
+```
+
+
+用两个函数表示：
+```
+// 归并排序，返回排好序的数组
+public static int[] mergeSort(int[] array) {
+}
+
+// 拷贝原数组的部分内容，从 left 到 right
+public static int[] subArray(int[] source, int left, int right) {
+}
+```
+
+先完成第二个函数：拷贝原数组
+```
+// 拷贝原数组的部分内容，从 left 到 right
+public static int[] subArray(int[] source, int left, int right) {
+    // 创建一个新数组
+    int[] result = new int[right - left];
+    // 依次赋值进去
+    for (int i = left; i < right; i++) {
+        result[i - left] = source[i];
+    }
+    return result;
+}
+```
+
+对mergesort，先找基准条件：数组只有一个就直接返回array；数组元素不止一个就调用拆分
+
+```
+// 归并排序，返回排好序的数组
+public static int[] mergeSort(int[] array) {
+    // 为了方便查看结果，我们将每个数组进行打印
+    System.out.println(Arrays.toString(array));
+    if (array.length == 1) {
+        return array;
+    }
+
+    int middle = array.length / 2;
+    // #1. 处理 0 到 middle 左侧数组部分
+    int[] left = mergeSort(subArray(array, 0, middle));
+    // #2. 处理 middle 到 array.length 右侧数组部分
+    int[] right = mergeSort(subArray(array, middle, array.length));
+
+    // TODO处理合并问题
+    return array;
+}
+```
+这只是拆分的逻辑
+
+
+![chaifen](https://style.youkeda.com/img/course/a1/5/4-5.svg)
+
+
 
 
 
