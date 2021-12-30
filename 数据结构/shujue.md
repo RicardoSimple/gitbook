@@ -389,9 +389,125 @@ public static int[] mergeSort(int[] array) {
 ![dierbu](https://style.youkeda.com/img/course/a1/5/4-4.svg)
 
 
-时间复杂度和二分法类似，O(log(N)),而且速度稳定
+时间复杂度和二分法类似，O(Nlog(N)),而且速度稳定
 
 代码实现：
+```
+public static int[] mergeSort(int[] array) {
+    // 为了方便查看结果，我们将每个数组进行打印
+    if (array.length == 1) {
+      return array;
+    }
+
+    int middle = array.length / 2;
+    // 处理 0 到 middle 左侧数组部分
+    int[] left = mergeSort(subArray(array, 0, middle));
+    // 处理 middle 到 array.length 右侧数组部分
+    int[] right = mergeSort(subArray(array, middle, array.length));
+
+    // TODO处理合并问题
+    int leftindex = 0,rightindex=0,index=0;
+    while(index< array.length)
+    {
+      if (leftindex==left.length||rightindex==right.length)
+      {
+       if (leftindex==left.length)array[index]=right[rightindex++];
+       else array[index]=left[leftindex++];
+        index++;
+        continue;
+      }
+
+      if (left[leftindex]<right[rightindex])
+      {
+        array[index]=left[leftindex];
+        leftindex++;
+      }else{
+        array[index]=right[rightindex];
+        rightindex++;
+      }
+      index++;
+    }
+    return array;
+  }
+```
+
+答案代码：
+```
+
+package com.youkeda;
+
+import java.util.Arrays;
+
+public class Sort {
+
+  // 归并排序
+  public static int[] mergeSort(int[] array) {
+    // 为了方便查看结果，我们将每个数组进行打印
+    if (array.length == 1) {
+      return array;
+    }
+
+    int middle = array.length / 2;
+    // 处理 0 到 middle 左侧数组部分
+    int[] left = mergeSort(subArray(array, 0, middle));
+    // 处理 middle 到 array.length 右侧数组部分
+    int[] right = mergeSort(subArray(array, middle, array.length));
+
+    // TODO处理合并问题
+    int l = 0;
+    int r = 0;
+    int index = 0;
+    // 依次比较左右两个数组
+    while (l < left.length && r < right.length) {
+      array[index] = Math.min(left[l], right[r]);
+      index++;
+      if (left[l] < right[r]) {
+        l++;
+      } else {
+        r++;
+      }
+    }
+
+    // 右侧数组已经遍历完成，左侧有剩余
+    if (l < left.length) {
+      for(int i = l; i < left.length; i++){
+        array[index] = left[i];
+        index++;
+      }
+    }
+
+    // 左侧数组已经遍历完成，右侧有剩余
+    if(r < right.length){
+      for(int i = r; i < right.length; i++){
+        array[index] = right[i];
+        index++;
+      }
+    }
+
+    return array;
+  }
+
+  // 拷贝原数组的部分内容，从 left 到 right
+  public static int[] subArray(int[] source, int left, int right) {
+    // 创建一个新数组
+    int[] result = new int[right - left];
+    // 依次赋值进去
+    for (int i = left; i < right; i++) {
+      result[i - left] = source[i];
+    }
+    return result;
+  }
+
+  public static void main(String[] args) {
+    int[] array = {9, 2, 4, 7, 5, 3};
+    // Arrays.toString 可以方便打印数组内容
+    System.out.println("raw: " + Arrays.toString(array));
+    int[] result = mergeSort(array);
+    System.out.println("result: " + Arrays.toString(result));
+  }
+}
+
+```
 
 
 
