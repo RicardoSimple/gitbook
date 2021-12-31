@@ -515,6 +515,117 @@ public class Sort {
 ```
 分区：快速排序中和归并排序差不多的分解思路，首先随机选择一个数作为轴，目标是将原始数组按照轴进行分区分拆，比轴小的在左边，比轴大的在右边
 
+public static int partition(int[] array, int left, int right) {
+      int indexleft = left,indexright = right -1,index;
+      int aim = array[right ];
+      while(indexleft<indexright){
+          if (array[indexleft]>aim&&array[indexright]<aim)
+          {
+              int temp = array[indexleft];
+              array[indexleft]=array[indexright];
+              array[indexright]=temp;
+              indexleft++;
+              indexright--;
+          }
+          if (indexleft>=indexright){
+              break;
+          }
+          if (array[indexright]>aim)
+          {
+              indexright--;
+          }
+          if (array[indexleft]<aim){
+              indexleft++;
+          }
+          if (indexleft>=indexright){
+              break;
+          }
+      }
+      if (indexright==right-1){
+          index =  right;
+      }
+      else
+          index = indexleft;
+      int temp = array[index];
+      array[index] = array[right];
+      array[right]=temp;
+
+      return index;
+
+  }
+```
+
+答案代码：
+```
+package com.youkeda;
+
+import java.util.Arrays;
+
+public class QuickSort {
+
+  // 快速排序
+  public static void quickSort(int[] array) {
+    // 调用快速排序的核心，传入left，right
+    quickSortCore(array, 0, array.length - 1);
+  }
+
+  // 快速排序的核心，同样也是递归函数
+  public static void quickSortCore(int[] array, int left, int right) {
+    // 递归基准条件，left >= right 即表示数组只有1个或者0个元素。
+    if (left >= right) {
+      return;
+    }
+    // 根据轴分区
+    int pivotIndex = partition(array, left, right);
+
+    // 递归调用左侧和右侧数组分区
+    quickSortCore(array, left, pivotIndex - 1);
+    quickSortCore(array, pivotIndex + 1, right);
+  }
+
+  // 对数组进行分区，并返回当前轴所在的位置
+  public static int partition(int[] array, int left, int right) {
+    int pivot = array[right];
+
+    int leftIndex = left;
+    int rightIndex = right - 1;
+    while (true) {
+      // 左指针移动
+      while (array[leftIndex] <= pivot && leftIndex < right) {
+        leftIndex++;
+      }
+      // 右指针移动
+      while (array[rightIndex] >= pivot && rightIndex > 0) {
+        rightIndex--;
+      }
+
+      if (leftIndex >= rightIndex) {
+        break;
+      } else {
+        swap(array, leftIndex, rightIndex);
+      }
+    }
+
+    swap(array, leftIndex, right);
+    return leftIndex;
+  }
+
+  public static void swap(int[] array, int index1, int index2) {
+    int temp = array[index1];
+    array[index1] = array[index2];
+    array[index2] = temp;
+  }
+
+  public static void main(String[] args) {
+    int[] array = {9, 2, 4, 7, 5, 3};
+    // Arrays.toString 可以方便打印数组内容
+    System.out.println("raw: " + Arrays.toString(array));
+    quickSort(array);
+    System.out.println("result: " + Arrays.toString(array));
+  }
+}
+```
+
 
 
 
