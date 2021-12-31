@@ -627,6 +627,11 @@ public class QuickSort {
 ```
 
 
+### 快速选择
+问题：
+找到10个元素的数组中，第4大的元素
+![tujie](https://style.youkeda.com/img/course/a1/5/5-7.svg)
+
 
 
 
