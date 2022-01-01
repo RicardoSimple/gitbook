@@ -631,6 +631,74 @@ public class QuickSort {
 问题：
 找到10个元素的数组中，第4大的元素
 ![tujie](https://style.youkeda.com/img/course/a1/5/5-7.svg)
+```
+package com.youkeda;
+
+import java.util.Arrays;
+
+public class QuickSort {
+
+  // 快速选择，返回选中的元素
+  public static int quickFind(int[] array, int aim) {
+    return quickFindcure(array,0, array.length-1,aim);
+  }
+  public  static int quickFindcure(int[] array,int left,int right,int aim){
+    int arrayindex= partition(array,left,right);
+    if (arrayindex == aim){
+      return array[arrayindex];
+    }
+    else if (arrayindex<aim){
+      return quickFindcure(array,arrayindex+1,right,aim);
+    }
+    else
+      {
+       return quickFindcure(array,left,arrayindex-1,aim);
+    }
+  }
+  public  static  int partition(int[] array,int left,int right ){
+    if (left == right)
+    {
+      return left;
+    }
+    int pivot = array[right];
+    int indexleft = left;
+    int indexright = right -1;
+    while(true){
+      while (array[indexleft]<pivot){
+        indexleft++;
+      }
+      while(array[indexright]>pivot){
+        indexright--;
+      }
+      if (indexleft>=indexright){
+        break;
+      }
+      else
+      {
+        swap(array,indexleft,indexright);
+      }
+    }
+    swap(array,indexleft,right);
+    return indexleft;
+  }
+  public static void swap(int[] array, int index1, int index2) {
+    int temp = array[index1];
+    array[index1] = array[index2];
+    array[index2] = temp;
+  }
+
+
+
+  public static void main(String[] args) {
+    int[] array = {72, 77, 48, 17, 71, 2, 25, 97, 82, 5, 2, 18, 15, 57, 7, 48, 93, 47, 38, 74, 18, 93, 98, 41, 54, 4, 47, 4, 63, 76};
+    System.out.println("raw: " + Arrays.toString(array));
+    // 目标是倒数第 6 个元素
+    int result = quickFind(array, array.length - 6);
+    System.out.println("result: " + result);
+  }
+}
+```
+
 
 
 
