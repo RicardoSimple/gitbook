@@ -1,0 +1,27 @@
+## 经验
+
+1. 在对List实例化时要用new ArrayList
+1. 爬取的内容值有时要判断是否为null，不然会导致错误
+1. List<Map>是好东西
+
+## 词云
+Java常见词云库为Kumo
++ github地址： 
+[Kumo地址](https://github.com/kennycason/kumo)
+
++ pom.xml依赖
+```
+<dependency>
+  <groupId>com.kennycason</groupId>
+  <artifactId>kumo-core</artifactId>
+  <version>1.17</version>
+</dependency>
+<!-- 下面tokenizers是为了中文分词引入 -->
+<dependency>
+  <groupId>com.kennycason</groupId>
+  <artifactId>kumo-tokenizers</artifactId>
+  <version>1.17</version>
+</dependency>
+```
+
+
