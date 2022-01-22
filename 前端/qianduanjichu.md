@@ -27,3 +27,11 @@ css不能单独使用
 开始标签，内容，结尾标签组成
 
 如果是单独出现的标签，一个标签就是一个元素
+
+#### html中的嵌套
+html中的元素可以嵌套
+```
+<div><p>HTML是一门伟大的语言！</p></div>
+```
+
+![html嵌套](https://document.youkeda.com/P3-1-HTML-CSS/1.2/16.png)
