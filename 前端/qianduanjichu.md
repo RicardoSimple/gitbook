@@ -58,4 +58,10 @@ key="value"
 + 一个head 元素必须且只能包含一个title元素
 1. 文档主体
 + 包括文档的所有内容（图片，文字，超链接等）
-
+#### html文档中的注释
+```
+<!-- -->
+```
+表示注释，不会显示
+#### MDN
+[MDN网站](https://developer.mozilla.org/zh-CN/docs/Web/HTML)
