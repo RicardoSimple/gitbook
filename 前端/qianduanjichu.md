@@ -65,3 +65,20 @@ key="value"
 表示注释，不会显示
 #### MDN
 [MDN网站](https://developer.mozilla.org/zh-CN/docs/Web/HTML)
+
+
+```
+图片<img>
+音频<audio>
+进度条<progress>
+```
+
+#### 块状标签和内联标签
+内联标签常常嵌套在块状标签中
+
++ 内联标签不会为自己的内容占据新的一行
+<span><img><strong>
++ 块状标签会为自己的内容占据新的一行
+段落：<p>  标题：<h1>，<div>
+
+#### 标签标题
