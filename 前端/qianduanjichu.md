@@ -98,3 +98,17 @@ key="value"
 ##### 图片标签<img url="" alt="">
 
 url是图片地址，绝对地址或相对地址，也可以是gif文件，alt是替换文字
+
+##### 链接标签<a>
+![示例](https://document.youkeda.com/P3-1-HTML-CSS/1.3/12.png)
+<a href="">wenzi</a>
+里面不仅能放文字，还能是图片等
+属性：
++ href是链接指向的地址
++ title属性给出链接的说明信息
+鼠标悬停在链接上方时，浏览器将这个属性的值以提示块的形式显示出来
++ target属性指定如何展示打开的链接
+target属性的值可以是"_self","_blank","_parent","_top"之一
+self是当前页面打开，blank是新页面打开
+
+
