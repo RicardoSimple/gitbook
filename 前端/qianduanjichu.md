@@ -116,4 +116,41 @@ self是当前页面打开，blank是新页面打开
 + 有序列表标签<ol>
 + 列表每一项内容用标签<li>
 
+#### html表单标签
+##### <form>标签
+form块状标签
++ 属性
+action 一个处理此表单信息的程序所在的url，所述表单信息将在表单提交时被发送到定义的地址
+
+method 它的值可以是GET或POST，用来规定如何发送表单信息
+
+
+```
+<!-- <form>是块状标签，要注意：<form>标签不能嵌套<form>标签 -->
+<form action="">
+  <!-- 这里会有一些表单控件 -->
+</form>
+```
+
+##### 单行文本输入框<input>
+
+```
+<!-- action=""则表单信息将提交到当前页面 -->
+<form action="">
+  <input type="text" />
+</form>
+```
+没有结束标签
+
+属性：
+type
+占位文本placeholder
+输入框名字name
+输入框的值value
+readonly只读
+disabled无法更改
+
+disabled和readonly的区别
+![image.png](./image.png)
+
 
