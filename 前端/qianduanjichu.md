@@ -153,4 +153,29 @@ disabled无法更改
 disabled和readonly的区别
 ![image.png](./image.png)
 
+##### 多行文本输入框和密码输入框
++ 用<textarea>标签来写多行文本输入框
+
+```
+<!-- name属性表示表单元素的名称，placeholder属性表示表单元素的占位文本 -->
+<textarea
+  name="sign"
+  rows="5"
+  cols="30"
+  placeholder="请输入个性签名"
+></textarea>
+```
+
+rows和cols表示文本框的行数和文本域的可视宽度
+
+右下角的斜线拖动可改变文本框的大小
+
++ 密码输入框
+
+密码输入框输入的内容会变成小黑点
+
+只需将type = "text" 改为type = "password"
+
+##### 单选框和复选框
+
 
