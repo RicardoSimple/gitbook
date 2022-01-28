@@ -177,5 +177,30 @@ rows和cols表示文本框的行数和文本域的可视宽度
 只需将type = "text" 改为type = "password"
 
 ##### 单选框和复选框
++ 单选框
+```
+<!-- type属性表示表单元素的类型，name属性表示表单元素的名称，value属性表示表单元素的值 -->
+<input type="radio" name="gender" value="male" />
+<input type="radio" name="gender" value="female" />
+
+```
+
+单选框就是把控件类型type = "text"改为了type = "radio"
+大部分表单类型就是通过改标签属性type实现的
+
+同一道单选题的单选选项应该具有相同的name属性值
+
+在input标签后直接加内容可以显示
+
+但是普通的只能点击圆点进行选择，要将选择范围变大可以用<label>标签
+
+```
+<label> <input type="radio" name="gender" value="male" />男 </label>
+<label> <input type="radio" name="gender" value="female" />女 </label>
+
+```
+
+
+
 
 
