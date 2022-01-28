@@ -199,6 +199,29 @@ rows和cols表示文本框的行数和文本域的可视宽度
 <label> <input type="radio" name="gender" value="female" />女 </label>
 
 ```
+另一种写法,增加了id属性，label的for属性和input的id属性应该保持一致
+```
+<input id="male" type="radio" name="gender" value="male" />
+<label for="male">男</label>
+<input id="female" type="radio" name="gender" value="female" />
+<label for="female">女</label>s
+```
++ 复选框
+复选框的标签属性是checkbox
+
+```
+<input type="checkbox" />
+``` 
+
+再配合name，value，label等
+
+```
+<label> <input type="checkbox" name="interest" value="coding" />编程 </label>
+<label> <input type="checkbox" name="interest" value="other" />其他 </label>
+```
+
+
+
 
 
 
