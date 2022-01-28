@@ -222,7 +222,37 @@ rows和cols表示文本框的行数和文本域的可视宽度
 
 ![image-1.png](./image-1.png)
 
-#### 选项菜单
+#### 选项菜单(下拉菜单)
++ 默认单选
+<option>标签，<select>标签
+例：
+```
+<select name="career">
+  <option value="default">请选择职业</option>
+  <option value="staff">公司职员</option>
+  <option value="freelancer">自由职业者</option>
+  <option value="student">学生</option>
+  <option value="other">其他</option>
+</select>
+```
+
++ 多选菜单
+给select添加multiple属性
+```
+<select name="career" multiple>
+  <option value="default">请选择职业</option>
+  <option value="staff">公司职员</option>
+  <option value="freelancer">自由职业者</option>
+  <option value="student">学生</option>
+  <option value="other">其他</option>
+</select>
+```
+
+按住ctrl或者菜单进行多选
+
+
+
+
 
 
 
