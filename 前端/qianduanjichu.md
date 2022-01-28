@@ -295,7 +295,9 @@ button标签是闭合标签所以之间的内容可以放图片，文字等
 </form>
 ```
 
+#### input标签小结
 
+![tupian](https://document.youkeda.com/P3-1-HTML-CSS/1.4/9.png?x-oss-process=image/resize,w_800/watermark,image_d2F0ZXJtYXNrLnBuZz94LW9zcy1wcm9jZXNzPWltYWdlL3Jlc2l6ZSx3XzEwMA==,t_60,g_se,x_10,y_10)
 
 
 
