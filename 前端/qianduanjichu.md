@@ -265,7 +265,35 @@ button标签是闭合标签所以之间的内容可以放图片，文字等
 <button type="submit">注册</button>
 ```
 
+#### 完整的注册表单
+```
+<form action="">
+  <input type="text" name="name" placeholder="请输入昵称" />
+  <textarea
+    name="sign"
+    rows="5"
+    cols="30"
+    placeholder="请输入个性签名"
+  ></textarea>
+  <input name="password" type="password" placeholder="请输入密码" />
 
+  <label> <input type="radio" name="gender" value="male" />男 </label>
+  <label> <input type="radio" name="gender" value="female" />女 </label>
+
+  <label> <input type="checkbox" name="interest" value="coding" />编程 </label>
+  <label> <input type="checkbox" name="interest" value="other" />其他 </label>
+
+  <select name="career">
+    <option value="default">请选择职业</option>
+    <option value="staff">公司职员</option>
+    <option value="freelancer">自由职业者</option>
+    <option value="student">学生</option>
+    <option value="other">其他</option>
+  </select>
+
+  <button type="submit">注册</button>
+</form>
+```
 
 
 
