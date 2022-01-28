@@ -220,7 +220,7 @@ rows和cols表示文本框的行数和文本域的可视宽度
 <label> <input type="checkbox" name="interest" value="other" />其他 </label>
 ```
 
-
+![image-1.png](./image-1.png)
 
 
 
