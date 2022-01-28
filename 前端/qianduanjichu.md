@@ -250,6 +250,21 @@ rows和cols表示文本框的行数和文本域的可视宽度
 
 按住ctrl或者菜单进行多选
 
+#### 按钮
+用<button>标签
+
+```
+<button>注册</button>
+```
+button标签是闭合标签所以之间的内容可以放图片，文字等
+
+这个按钮放在form中点击会自动提交表单数据，但是在button中提交表单数据会有浏览器兼容的问题
+所以会加上type= "submit"来确保数据的提交
+
+```
+<button type="submit">注册</button>
+```
+
 
 
 
