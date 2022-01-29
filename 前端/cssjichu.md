@@ -44,4 +44,32 @@ lighter（细200），bold（粗700），bolder（更粗）
 <p style="font-weight: bold;">优课达--学的比别人好一点～</p>
 ```
 
+#### 字体颜色
+color:XXX
+
+color的值有多种方式
+
++ 英文字母方式
+black，blue，red。。。。
+
++ 十六进制颜色
+十六进制颜色由#开头，后面跟三个数字，每个数字的范围由00~FF，每个数字代表一种颜色，最终颜色由三种颜色混合成
+color:#DAE8FC
+
++ rgb形式
+r(red)g(green)b(blue),最终由三种颜色混合而成，每种颜色的范围由0~255
+
++ rgba形式
+相对rgb多了一个a，表示透明度
+值在0~1之间
+
+#### 文字对齐方式
+text-align： 
+
+center文字居中对齐
+left 文字左对齐
+right 文字右对齐
+
+
+
 
