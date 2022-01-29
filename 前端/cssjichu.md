@@ -30,3 +30,18 @@ css中，样式是由属性和值组成，冒号隔开分号收尾
 ```
 
 字体大小font-size
+
+字体加粗font-weight
+设置字体粗细时，其值可以是100,200,300,400,500,600,700,800,900中的任何一个，或者可以用英文代替，normal（正常粗细），
+lighter（细），bold（粗），bolder（更粗）
+
+```
+<p style="font-weight: 200;">优课达--学的比别人好一点～</p>
+<p style="font-weight: lighter;">优课达--学的比别人好一点～</p>
+<p style="font-weight: 400;">优课达--学的比别人好一点～</p>
+<p style="font-weight: normal;">优课达--学的比别人好一点～</p>
+<p style="font-weight: 700;">优课达--学的比别人好一点～</p>
+<p style="font-weight: bold;">优课达--学的比别人好一点～</p>
+```
+
+
