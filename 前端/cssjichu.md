@@ -70,6 +70,41 @@ center文字居中对齐
 left 文字左对齐
 right 文字右对齐
 
+#### 文字行高
+![行高](https://qgt-document.oss-cn-beijing.aliyuncs.com/P3-1-HTML-CSS/1.5/%E8%A7%A3%E9%87%8A%E8%A1%8C%E9%AB%981.png?x-oss-process=image/resize,w_800/watermark,image_d2F0ZXJtYXNrLnBuZz94LW9zcy1wcm9jZXNzPWltYWdlL3Jlc2l6ZSx3XzEwMA==,t_60,g_se,x_10,y_10)
+
+虚线高度就是font-size 
+
+20px的行高减去12px再平分两份就是4px
+
+行高的设置格式
+line-height: 30px
+
+所以行高的作用有两个：
+
+第一个：改变行与行之间的距离
+```
+<p>
+  We understand every aspect of project and we put a great amount of time in
+  understanding the project.
+</p>
+
+<p style="line-height:32px;">
+  We understand every aspect of project and we put a great amount of time in
+  understanding the project.
+</p>
+```
 
 
+第二个： 使文字上下居中
+当行高与矩形高度一样时就上下居中
 
+文字居中的按钮：
+
+```
+<button
+  style="width: 120px;height:50px;text-align: center;line-height:50px;color:white;font-size: 18px;"
+>
+  提交
+</button>
+```
