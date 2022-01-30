@@ -141,3 +141,87 @@ font-family: 'Goudy Bookletter 1911', sans-serif, 'Gill Sans Extrabold';
 ### css的三种引入方式
 
 #### 行内式
+行内式需要内嵌在每一个html标签中
+![行内式](https://qgt-document.oss-cn-beijing.aliyuncs.com/P3-1-HTML-CSS/1.6/line-style-css.png?x-oss-process=image/resize,w_800/watermark,image_d2F0ZXJtYXNrLnBuZz94LW9zcy1wcm9jZXNzPWltYWdlL3Jlc2l6ZSx3XzEwMA==,t_60,g_se,x_10,y_10)
+
+这样比较麻烦，所以我们需要抽取出这些样式
+#### 内部样式
+![抽离过程](https://qgt-document.oss-cn-beijing.aliyuncs.com/P3-1-HTML-CSS/1.6/head-style-css.png?x-oss-process=image/resize,w_800/watermark,image_d2F0ZXJtYXNrLnBuZz94LW9zcy1wcm9jZXNzPWltYWdlL3Jlc2l6ZSx3XzEwMA==,t_60,g_se,x_10,y_10)
+
+```
+抽离步骤：
+1. 首先我们将每一个css的标签抽离出来
+2. 然后在head标签中声明一个<style></style>标签
+3. 接下来将样式都放在style里，这不是简单的复制粘贴
+```
+![抽离](https://qgt-document.oss-cn-beijing.aliyuncs.com/P3-1-HTML-CSS/1.6/%E5%A4%B4%E9%83%A8%E6%A0%B7%E5%BC%8F%E6%8A%BD%E7%A6%BB.png?x-oss-process=image/resize,w_800/watermark,image_d2F0ZXJtYXNrLnBuZz94LW9zcy1wcm9jZXNzPWltYWdlL3Jlc2l6ZSx3XzEwMA==,t_60,g_se,x_10,y_10)
+
+```
+4. 将相同的标签的样式写在大括号里，大括号前面加上标签名
+p {
+  font-size: 16px;
+  color: #ffffff;
+}
+```
+
+书写规则：
+![shuxie](https://qgt-document.oss-cn-beijing.aliyuncs.com/P3-1-HTML-CSS/1.6/%E6%A0%B7%E5%BC%8F%E9%87%8D%E7%82%B9%E8%A7%A3%E9%87%8A.png?x-oss-process=image/resize,w_800/watermark,image_d2F0ZXJtYXNrLnBuZz94LW9zcy1wcm9jZXNzPWltYWdlL3Jlc2l6ZSx3XzEwMA==,t_60,g_se,x_10,y_10)
+
+   1. 不要忘记写style标签
+   1. 样式要用大括号括起来
+   1. 每个样式后面要用分号
+
+#### 外部样式
+随着代码量的增加，css的代码会比html多，会出现头重脚轻的现象，所以要进一步抽离
+
+![外部样式](https://qgt-document.oss-cn-beijing.aliyuncs.com/P3-1-HTML-CSS/1.6/%E5%A4%96%E9%83%A8%E6%A0%B7%E5%BC%8F%E5%BC%95%E5%85%A5%E6%AD%A5%E9%AA%A4.png?x-oss-process=image/resize,w_800/watermark,image_d2F0ZXJtYXNrLnBuZz94LW9zcy1wcm9jZXNzPWltYWdlL3Jlc2l6ZSx3XzEwMA==,t_60,g_se,x_10,y_10)
+
+抽离步骤：
+```
+1. 新建一个index.css文件
+2. 将html中head标签中的style标签内的全部样式复制到index.css中
+3. 建立html和css的联系，用link标签引入css，注意link标签一定在head中
+```
+
+#### css注释
+html的注释方式是```<!--注释-->```,而css的注释不同，是```/*注释*/```
+
++ 内部样式注释
+```
+<style>
+/* 写CSS的基础样式 */
+.base{
+  /* 基础字体大小 */
+  font-size: 14px;
+  /* 基础字体颜色 */
+  color:#000000;
+}
+</style>
+```
+
++ 外部样式注释，直接在css文件中
+```
+/* 写CSS的基础样式 */
+.base {
+  /* 基础字体大小 */
+  font-size: 14px;
+  /* 基础字体颜色 */
+  color: #000000;
+}
+```
+
+#### link标签的属性
+```
+<link rel="stylesheet" type="text/css" href="index.css" />
+```
+
++ rel属性
+规定了当前文档与被联系文档之间的关系
+但是stylesheet的值被所有浏览器支持，所以记住一个值就行
+
++ type属性
+规定了被联系文档的MIME（多用途互联网邮件扩展类型）最常见的值就是text/css
+
++ href属性
+表示被联系文档的地址
+
