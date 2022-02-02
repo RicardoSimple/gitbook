@@ -321,6 +321,65 @@ ul li p span a{}
 
 多层的话可以添加类名减少复杂度
 
+#### 交集选择器
+书写规则：
+```
+a.special{}
+```
+
+```
+<a href="#" class="special">超链接</a>
+<a href="#">超链接</a>
+<a href="#">超链接</a>
+<a href="#">超链接</a>
+```
+意思是，在所有的a标签内类名为special的标签
+比如：
+```
+<ul>
+    <li><a href="" class="special">电子产品</a></li>
+    <li><a href="">家居服饰</a></li>
+    <li><a href="">电竞手办</a></li>
+    <li><a href="" class="special">家装服务</a></li>
+    <li><a href="">房屋出租</a></li>
+</ul>
+```
+
+```
+ul li {
+    list-style: none;
+    font-size: 22px;
+}
+
+ul li a {
+    /* 去除a标签的下划线 */
+    text-decoration: none;
+    /* 这里的颜色一定要在a标签上设置，因为a标签默认会去设置字体颜色，会层叠掉默认的黑色 */
+    color: black;
+}
+
+ul li a.special {
+    color: orangered;
+}
+```
+
+#### 子选择器
+书写规则：
+```
+p>span {
+    color: orangered;
+}
+```
+与后代选择器类似但是后代选择器突出的是后代，子选择器突出的是子
+
+#### 并集选择器
+书写规则：
+```
+.box,p,h3,.phone{}
+```
+用逗号隔开
+如果要给不同的标签添加相同的样式，就要用到并集选择器，表示的是"和"
+
 
 
 
