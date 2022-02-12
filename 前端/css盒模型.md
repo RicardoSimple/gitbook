@@ -296,3 +296,16 @@ margin还有一个作用就是可以让盒子在父盒子中左右居中
 ```
 如果去掉son中的width就会失去居中效果
 
+#### display:block/none
++ display:block
+块元素属性1-独占一行
+块元素性质2-可以设置宽高
++ 行内元素和块状元素的转换
+块状元素默认的display是block
+行内元素默认的display是inline
+
+只要设置display的值就可以达到行内元素和块状元素互转的效果
++ display: none
+none就是无，也就是设置了这个属性值，标签就会消失，在网页布局中最常用的就是用none和block来控制元素的显示和隐藏
+
+
