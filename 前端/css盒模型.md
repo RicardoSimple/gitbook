@@ -223,3 +223,76 @@ y偏移量：在y轴上移动，向下为正
 阴影扩散半径：就是向外扩散
 阴影颜色：就是矩形下面那个矩形的颜色
 
+#### margin
+margin是外边距，所谓外边距，就是矩形与矩形之间的间距
+![margin](https://qgt-document.oss-cn-beijing.aliyuncs.com/P3-1-HTML-CSS/1.7/margin1.png?x-oss-process=image/resize,w_800/watermark,image_d2F0ZXJtYXNrLnBuZz94LW9zcy1wcm9jZXNzPWltYWdlL3Jlc2l6ZSx3XzEwMA==,t_60,g_se,x_10,y_10)
+
+margin的写法与padding一样
+```
+.box{
+    /*总写*/
+    margin: 20px;
+    /*分开写*/
+    margin-top: 20px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    margin-left: 20px;
+}
+```
+
++ 两个盒子之间margin的计算
+水平距离是两个盒子的左右margin之和
+
+垂直距离是两个盒子的最大设置值
+![chuzhui](https://qgt-document.oss-cn-beijing.aliyuncs.com/P3-1-HTML-CSS/1.7/max_margin.png?x-oss-process=image/resize,w_800/watermark,image_d2F0ZXJtYXNrLnBuZz94LW9zcy1wcm9jZXNzPWltYWdlL3Jlc2l6ZSx3XzEwMA==,t_60,g_se,x_10,y_10)
+
+所以在实际应用中设置两个盒子垂直间距为50px；
+不推荐
+```
+.box1{
+    margin-bottom: 20px;
+}
+.box2{
+    margin-top: 50px;
+}
+```
+
+推荐
+```
+.box1{
+    margin-bottom: 50px;
+}
+```
+
+不推荐
+```
+.box2{
+    margin-top: 50px;
+}
+```
+就是只设置底部
+
++ 盒子左右居中
+margin还有一个作用就是可以让盒子在父盒子中左右居中
+```
+<div class="father"> 
+    <div class="son"></div>
+</div>
+```
+但是前提是必须有宽度
+```
+.father{
+    width:400px;
+    height:200px;
+    border: 1px solid #ccc;
+}
+
+.son{
+    width:200px;
+    height:100px;
+    margin:0 auto;
+    border: 1px solid #ccc;
+}
+```
+如果去掉son中的width就会失去居中效果
+
