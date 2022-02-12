@@ -108,3 +108,118 @@ content-box计算的公式： width=内容的宽度，height=内容的高度
 
 border-box计算的公式： width=border+padding+内容的宽度，height=border+padding+内容的高度
 
+#### border 边框
+边框就是包裹在padding外面的一层线
+
+设置边框线：
+```
+.box {
+  /* 设置矩形大小 */
+  width: 200px;
+  height: 30px;
+  /* 设置边框线 */
+  border-width: 2px;
+  border-color: grey;
+  border-style: solid;
+}
+```
+
++ css属性解释
+border-width是边框的粗细，单位是px
+border-color是边框的颜色
+border-style是边框的线型，solid是实线，dashed是虚线，这是常用的两种，还有其他的类型
+
++ 边框的简写
+```
+.box {
+  border: 2px solid blue;
+}
+```
+后面的三个值要用空格分开，值的顺序可以忽略
++ 分别设置边框
+```
+.box {
+  /*设置顶部border*/
+  border-top-color: blue;
+  border-top-style: solid;
+  border-top-width: 2px;
+  /*那么接下来，left，right，bottom是类似的，这里忽略不写*/
+}
+```
+
+类似于padding分别设置，但是这种不推荐
+推荐的写法：
+```
+.box {
+  /* 添加顶部border */
+  border-top: 1px solid black;
+  /*添加右侧border*/
+  border-right: 3px solid orange;
+  /*添加底部border*/
+  border-bottom: 5px dashed pink;
+  /*添加左侧border*/
+  border-left: 10px dashed purple;
+}
+```
+
++ 利用层叠性设置边框
+在设置边框时，遇到只有一边是与其他边不同的情况，可以用层叠性来减少代码量
+
+```
+.box {
+  /*设置矩形的宽*/
+  width: 300px;
+  /*设置矩形的高*/
+  height: 300px;
+  /*设置矩形的背景颜色*/
+  background-color: white;
+  /*设置矩形的边框*/
+  /*统一设置矩形的所有边框样式*/
+  border: 2px solid black;
+  /*重新设置一个下边框的样式来层叠掉统一设置的边框的样式*/
+  border-bottom: 5px solid orange;
+}
+```
+
++ 无边框
+border的属性值none是无边框
+
++ 圆角
+圆角的设置方法
+```
+.box {
+  border-radius: 12px;
+}
+```
+设置圆角之前需要先设置边框或背景色，圆角也能分开设置
+```
+.box {
+  width: 200px;
+  height: 200px;
+  background-color: violet;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 10px;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 15px;
+}
+```
+是左上角等
++ 阴影
+```
+.box {
+  width: 200px;
+  height: 200px;
+  border: 1px solid #c4c4c4;
+  /* x偏移量 | y偏移量 | 阴影模糊半径 | 阴影扩散半径 | 阴影颜色 */
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 15px;
+}
+```
+阴影的实现原理可以看作是有一个同样大小的矩形在x轴y轴上偏移
+
+x偏移量：在x轴上移动，向右为正
+y偏移量：在y轴上移动，向下为正
+阴影模糊半径：就是边线的清晰度
+阴影扩散半径：就是向外扩散
+阴影颜色：就是矩形下面那个矩形的颜色
+
