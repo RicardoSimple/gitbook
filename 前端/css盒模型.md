@@ -309,3 +309,48 @@ margin还有一个作用就是可以让盒子在父盒子中左右居中
 none就是无，也就是设置了这个属性值，标签就会消失，在网页布局中最常用的就是用none和block来控制元素的显示和隐藏
 
 
+#### display: inline/inline-block
+行内元素不能设置宽高
+
+行内元素可以设置padding
+与块状元素的padding不太一样，会与块状元素重叠
+
+行内元素可以设置左右margin，但是不能设置上下margin
+
++ inline-block
+就是即具有inline的性质又具有block的性质
+
+可以简单理解为inline-block就是可以显示在同一行的块元素
++ 空白折叠现象
+并排的两个盒子之间出现了空白，但是我们并没有设置margin，原因就是两个div之间有回车
+
+在html中，回车被当成一个文字，所以这里的空白就是文字的空白
+
+解决方法有三种：
+```
+1. 去掉回车，写在同一行
+2. 给父元素添加word-spacing属性
+<div class="father">
+  <div class="box1"></div>
+  <div class="box2"></div>
+</div>
+
+.father {
+  word-spacing: -50px;
+}
+
+.box1 {
+  width: 200px;
+  height: 50px;
+  display: inline-block;
+  background-color: #fff2cc;
+}
+
+.box2 {
+  width: 200px;
+  height: 50px;
+  display: inline-block;
+  background-color: #b0e3e6;
+}
+
+3. 给父元素设置font-size为0
