@@ -91,3 +91,12 @@ main：一般用户表示此区域是网页的主体区域
 
 模态框总有一个半透明的背景
 
++ 元素水平居中
+  1. 如果内部是行内元素，我们可以在父容器中使用text-align: center
+  1. 如果内部是块状元素，我们可以在子容器中使用margin: 0 auto(如果不是块状元素，需要设置display: block)
++ 元素垂直居中
+  可以使用margin完成居中效果
+  margin-top=（modal高度-img高度）/2
+
+
+left,top定位的都是左上角，所以还要用margin来调整
