@@ -49,5 +49,20 @@ sticky(粘性定位)
 默认的非static元素的z-index都为0
 z-index越大，则越在最上面，离观察者最近
 同样的z-index，则在html中元素越靠后，离观察者越近
+```
 
+#### position-sticky(粘性定位)
+![sticky](https://document.youkeda.com/P3-1-HTML-CSS/1.8/6-sticky/1.mp4)
+
+就是当mountain滚到顶部时，会粘在顶部，
+
+滚动回去时会回到之前的位置
+```
+h1 {
+  position: sticky;
+  color: yellowgreen;
+  top: 50px;
+  z-index: 1;
+}
+```
 
