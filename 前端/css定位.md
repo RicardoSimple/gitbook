@@ -66,3 +66,23 @@ h1 {
 }
 ```
 
+#### float
+新标签nav，main
+
+nav：一般表示此区域是导航区域
+main：一般用户表示此区域是网页的主体区域
+
++ float
+中文是浮动
+
+有两个最基本的值： left，right
+比如导航栏的设置中logo和头像：
+```
+.logo {
+  float: left;
+}
+
+.avatar {
+  float: right;
+}
+```
