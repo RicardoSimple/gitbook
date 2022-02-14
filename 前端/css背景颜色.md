@@ -72,3 +72,35 @@ background-position: center;
 描述： 第一个是水平位置，第二个是垂直位置，左上角是0% 0%，右下角是100% 100%，如果只写一个值，另一个默认为50%
 
 值： Xpx Ypx
+
++ 背景图片撑满整个容器
+如下
+![1](https://document.youkeda.com/P3-1-HTML-CSS/1.10/2-background/9.png?x-oss-process=image/resize,w_800/watermark,image_d2F0ZXJtYXNrLnBuZz94LW9zcy1wcm9jZXNzPWltYWdlL3Jlc2l6ZSx3XzEwMA==,t_60,g_se,x_10,y_10)
+
+用到background-size属性
++ background-size的值
+cover ：把背景图片扩展至足够大以使背景图片完全覆盖背景区域，但是背景图片的某些区域也许无法显示在背景定位区域中
+
+contain： 把图像扩展至最大尺寸，以使宽度和高度都完全适应背景区域
+
+Xpx Ypx： 手动设置宽高
+
+x% y%： 设置相对于容器的宽高
+
++ background合并写法
+![合并写法](https://document.youkeda.com/P3-1-HTML-CSS/1.10/2-background/12.png?x-oss-process=image/resize,w_800/watermark,image_d2F0ZXJtYXNrLnBuZz94LW9zcy1wcm9jZXNzPWltYWdlL3Jlc2l6ZSx3XzEwMA==,t_60,g_se,x_10,y_10)
+
+比如：
+```
+background: url(https://style.youkeda.com/img/ykd-components/logo.png)
+    no-repeat center / contain;
+```
+
++ 其他属性
+[background-attachment](https://developer.mozilla.org/zh-CN/docs/Web/CSS/background-attachment)
+
+[background-clip](https://developer.mozilla.org/zh-CN/docs/Web/CSS/background-clip)
+
+
+
+
