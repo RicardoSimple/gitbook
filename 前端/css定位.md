@@ -117,3 +117,10 @@ left,top定位的都是左上角，所以还要用margin来调整
 + 阴影
 box-shadow
 [mdn阴影](https://developer.mozilla.org/zh-CN/docs/Web/CSS/box-shadow)
+
++ 修改placeholder的样式
+```
+::-webkit-input-placeholder {
+  color: red;
+}
+```
