@@ -103,3 +103,17 @@ left,top定位的都是左上角，所以还要用margin来调整
 
 #### 搜索框
 由两个组件构成，一个搜索框，一个搜索结果列表
+
++ 搜索框
+一般将导航栏右边的元素都用容器包起来，设置float
+搜索用input设置
+搜索图标可以用绝对定位设置
+
++ 搜索结果
+搜索结果宽度和头部搜索栏的宽度一致
+
+搜索结果脱离文档流，是浮在所有元素上面
+
++ 阴影
+box-shadow
+[mdn阴影](https://developer.mozilla.org/zh-CN/docs/Web/CSS/box-shadow)
