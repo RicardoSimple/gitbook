@@ -99,4 +99,30 @@ span::before {
 ```
 
 #### css伪类——清除浮动
++ 浮动带来的问题
+设置子元素的高度后，父元素会自适应，会被子元素撑起来
 
+会影响父元素兄弟元素的布局
+
++ 清除浮动
+让父元素包住浮动的子元素
+
+这种技术叫做清除浮动
+css代码：
+```
+.clearfix::after{
+  content: '';
+  display: block;
+  clear: both;
+}
+```
+需要在父元素中加入类名clearfix
+```
+<!-- 添加清除浮动类名 -->
+<div class="father-one clearfix">
+    <div class="son-one">son-one</div>
+    <div class="son-two">son-two</div>
+    <div class="son-three">son-three</div>
+</div>
+```
+总结：哪个元素有浮动，就在哪个元素中添加清除浮动
