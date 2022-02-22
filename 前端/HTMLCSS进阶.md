@@ -184,5 +184,53 @@ div:hover>span{
 ```
 如果是图片发生hover，可以用背景图片
 
++ 如何通过兄弟元素的伪类改变另一个兄弟元素的属性
+显示隐藏元素可以用display: none
+```
+<div>
+    <input type="text">
+    <div></div>
+</div>
+```
 
+css伪类改变兄弟元素的属性
+```
+/* 选中获得焦点的 input 元素后面一个 div 元素（input 和 div 是兄弟元素） */
+input:focus+div{
+    border:1px solid blue;
+}
+```
+但是被改变的元素要紧邻有伪类效果的元素
+比如这种情况就不会生效
+```
+<div>
+    <input type="text">
+    <p></p>
+    <div></div>
+</div>
+```
+
++ 结合hover和display控制元素的显示和隐藏
+```
+<div class="box"></div>
+<ul>
+    <li>item</li>
+    <li>item</li>
+    <li>item</li>
+</ul>
+```
+css:
+```
+ul{
+    display:none;
+}
+.box{
+    width: 100px;
+    height: 30px;
+    background-color: #FF0000;
+}
+.box:hover+ul{
+    display: block;
+}
+```
 
