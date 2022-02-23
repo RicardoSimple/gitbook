@@ -247,5 +247,28 @@ ul>li:first-child{
 }
 ```
 一定是ul>li
-1.  
+1.  匹配父元素的最后一个元素
+:last-child
+
+将上述的:first-child改成:last-child
+1. 匹配父元素的第n个子元素
+:nth-child()
+括号里添加任意数字，1代表first
+比如：
+```
+ul>li:nth-child(3){
+  background-color: #3687FC;
+  color: #FFFFFF;
+}
+```
+这是第三个子元素
+
+括号里还可以写
+odd表示奇数
+even表示偶数
+n+3表示n取大于等于0的所有项
+2n+3同理
+
+
+
 
