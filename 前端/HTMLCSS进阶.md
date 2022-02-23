@@ -234,3 +234,18 @@ ul{
 }
 ```
 
++ css伪类——列表伪类
+列表伪类的功能更像是一个选择器，选择某个元素的子元素
+常用的三个：
+1. 匹配其父元素的第一个子元素
+:first-child
+
+```
+ul>li:first-child{
+    background-color: #3687FC;
+    color: #FFFFFF;
+}
+```
+一定是ul>li
+1.  
+
