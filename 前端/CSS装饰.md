@@ -32,3 +32,41 @@ span{
 
 [使用阴影制造缝合效果](https://codepen.io/HUBLine/pen/yLLRgYa)
 [使用阴影制造多页效果](https://codepen.io/HUBLine/pen/YzzORYb)
+
+#### flex布局
+flex布局可以简便，完整，响应式的实现各种页面布局。
+flex有强大的空间分布和对齐能力
++ flex是什么
+flex是flexible box的缩写，意为弹性布局，任何一个盒模型都可以指定为flex布局
+
+
+它最显著的效果就是把原本从上到下排列的块状元素变成水平排列
+```
+<div class="container">
+  <div class="item">项目1</div>
+  <div class="item">项目2</div>
+  <div class="item">项目3</div>
+</div>
+```
+css:
+```
+.container {
+  display: flex;
+  background: #D5E8D4;
+  border: 1px solid #5D9E5A;
+}
+
+.item {
+  width: 50px;
+  height: 50px;
+  background: #FFF2CC;
+  border: 1px solid #B7A570;
+  margin: 10px;
+}
+```
+注:设为flex布局后，子元素的float，clear和vertical-align都将失效
+
+直接设置flex的元素叫flex容器(container)
+直接子元素叫flex项目(item)
+
+#### flex布局调整水平方向分布属性justify-content
