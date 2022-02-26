@@ -8,7 +8,7 @@
 左边的色值:   #95CA47
 右边的色值为:  #4DC891
 
-background的新的值liner-gradient(线性渐变)
+background的新的值linear-gradient(线性渐变)
 
 ![方法](http://document.youkeda.com/P3-1-HTML-CSS/1.10/1-gradient/3.png?x-oss-process=image/resize,w_800/watermark,image_d2F0ZXJtYXNrLnBuZz94LW9zcy1wcm9jZXNzPWltYWdlL3Jlc2l6ZSx3XzEwMA==,t_60,g_se,x_10,y_10)
 
