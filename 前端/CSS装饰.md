@@ -70,3 +70,33 @@ css:
 直接子元素叫flex项目(item)
 
 #### flex布局调整水平方向分布属性justify-content
+justify-content属性定义了项目在水平方向上的对齐方式
+justify-content有六个值
+```
+justify-content: flex-start | flex-end | center | space-between | space-around | space-evenly;
+```
+
+flex-start(默认值):项目向水平方向的起点对齐
+flex-end:项目向水平方向的终点对齐
+center:项目向水平方向居中
+space-between:在每行上均匀分配项目，相邻项目间距相同
+space-around:在每行上均匀分布，项目间距如图
+space-evenly:在每行上均匀分布，但是间距与space-between不同
+![justify-content](https://document.youkeda.com/P3-2-HTML-CSS/1.4/9.jpg?x-oss-process=image/resize,w_800/watermark,image_d2F0ZXJtYXNrLnBuZz94LW9zcy1wcm9jZXNzPWltYWdlL3Jlc2l6ZSx3XzEwMA==,t_60,g_se,x_10,y_10)
+最常用的是space-between
+
+#### 垂直方向上的分布align-items
+align-items和justift-content都是容器的属性，设置在容器上
+
+五个值：
+```
+align-items: flex-start | flex-end | center | baseline | stretch;
+```
+
+flex-start:项目向垂直方向的起点对齐
+flex-end:项目向垂直方向的终点对齐
+center：项目在垂直方向上居中
+stretch（默认值）:项目在垂直方向上被拉伸到与容器相同的高度或高度
+baseline：按项目的第一行文字的基线对齐
+![align-text](https://document.youkeda.com/P3-2-HTML-CSS/1.4/10.jpg?x-oss-process=image/resize,w_800/watermark,image_d2F0ZXJtYXNrLnBuZz94LW9zcy1wcm9jZXNzPWltYWdlL3Jlc2l6ZSx3XzEwMA==,t_60,g_se,x_10,y_10)
+最常用的是center
