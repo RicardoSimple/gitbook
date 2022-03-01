@@ -1,5 +1,5 @@
 * [介绍](README.md)
-*[P2]
+* [P2]
   * [git的总结指令](git总结.md)
   * [Java入门总结]
    * [Java第二章总结](javasummary20211207.md)
