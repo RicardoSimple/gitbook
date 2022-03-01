@@ -100,3 +100,18 @@ stretch（默认值）:项目在垂直方向上被拉伸到与容器相同的高
 baseline：按项目的第一行文字的基线对齐
 ![align-text](https://document.youkeda.com/P3-2-HTML-CSS/1.4/10.jpg?x-oss-process=image/resize,w_800/watermark,image_d2F0ZXJtYXNrLnBuZz94LW9zcy1wcm9jZXNzPWltYWdlL3Jlc2l6ZSx3XzEwMA==,t_60,g_se,x_10,y_10)
 最常用的是center
+
+
+#### flex-wrap
+默认情况下，项目都排在水平方向上，并且是单行排列，不会换行
+即使所有的项目超过了容器宽度，也不会换行，而是被压缩
+
+如果想让项目换行，就可以用flex-wrap属性
+定义项目是否换行，如何换行
+
+flex-wrap可能取三个值：nowrap，wrap,wrap-reverse
+
+nowrap(默认值):不换行
+wrap：换行，第一行在上方
+wrap-reverse:换行，第一行在下方
+![flex-wrap](https://document.youkeda.com/P3-2-HTML-CSS/1.4/19.jpg?x-oss-process=image/resize,w_800/watermark,image_d2F0ZXJtYXNrLnBuZz94LW9zcy1wcm9jZXNzPWltYWdlL3Jlc2l6ZSx3XzEwMA==,t_60,g_se,x_10,y_10)
