@@ -115,3 +115,5 @@ nowrap(默认值):不换行
 wrap：换行，第一行在上方
 wrap-reverse:换行，第一行在下方
 ![flex-wrap](https://document.youkeda.com/P3-2-HTML-CSS/1.4/19.jpg?x-oss-process=image/resize,w_800/watermark,image_d2F0ZXJtYXNrLnBuZz94LW9zcy1wcm9jZXNzPWltYWdlL3Jlc2l6ZSx3XzEwMA==,t_60,g_se,x_10,y_10)
+
+#### flex:none和flex:1
