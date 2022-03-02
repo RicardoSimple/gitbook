@@ -203,3 +203,5 @@ column-reverse:主轴垂直，起点在下方
 90vh,意思可以看作将浏览器高度分为100份，每一份占1vh
 
 + 主轴改变后的影响
+1. 默认情况： justify-content控制水平方向，align-items控制垂直方向
+1. 设置了flex-direction:column : justify-content控制垂直方向，align-items控制水平方向
