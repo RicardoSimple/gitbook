@@ -165,4 +165,41 @@ css代码：
 
 只要给指定的项目设置flex:1就行
 
+#### flex-direction
+与之前的三栏自适应布局类似，只不过我们需要垂直方向上三栏自适应布局
 
+比如许多软件界面这样就可以在不同的手机上适应高度
+![垂直方向三栏自适应](https://document.youkeda.com/P3-2-HTML-CSS/1.4/40.gif)
+
+要做这种布局的思路很简单
+只需要改变横向三栏自适应的中三栏的排列方向就行水平向右改为从上到下
+
+flex-direction属性可以改变项目的排列方向
+
+当设置flex-direction:column时三栏自适应就会从上到下排列
+
++ 主轴和交叉轴
+![主轴和交叉轴](https://document.youkeda.com/P3-2-HTML-CSS/1.4/42.jpg?x-oss-process=image/resize,w_800/watermark,image_d2F0ZXJtYXNrLnBuZz94LW9zcy1wcm9jZXNzPWltYWdlL3Jlc2l6ZSx3XzEwMA==,t_60,g_se,x_10,y_10)
+
+默认情况下主轴的方向：水平从左到右  交叉轴方向：竖直从上到下
+
+容器中的项目默认按主轴排列
+
+所以现在要改变项目的排列方向只需要改变主轴的方向就行
+
+主轴和交叉轴是始终保持垂直的方向
+
++ flex-direction有四个有效值：row/row-reverse/column/column-reverse
+row(默认值): 主轴为水平方向，起点在左边
+
+row-reverse: 主轴为水平方向，起点在右边
+
+column:主轴垂直，起点在上方
+
+column-reverse:主轴垂直，起点在下方
+![flex-direction](https://document.youkeda.com/P3-2-HTML-CSS/1.4/8.jpg?x-oss-process=image/resize,w_800/watermark,image_d2F0ZXJtYXNrLnBuZz94LW9zcy1wcm9jZXNzPWltYWdlL3Jlc2l6ZSx3XzEwMA==,t_60,g_se,x_10,y_10)
+
++ height:90vh
+90vh,意思可以看作将浏览器高度分为100份，每一份占1vh
+
++ 主轴改变后的影响
