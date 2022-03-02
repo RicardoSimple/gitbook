@@ -117,3 +117,52 @@ wrap-reverse:换行，第一行在下方
 ![flex-wrap](https://document.youkeda.com/P3-2-HTML-CSS/1.4/19.jpg?x-oss-process=image/resize,w_800/watermark,image_d2F0ZXJtYXNrLnBuZz94LW9zcy1wcm9jZXNzPWltYWdlL3Jlc2l6ZSx3XzEwMA==,t_60,g_se,x_10,y_10)
 
 #### flex:none和flex:1
+在前面我们已经知道如果我们容器设置了display:flex
+那么当项目在一行内排不下时，就会被压缩
+
+如果项目在一行内还有多余的位置那么项目不会被压缩也不会放大
+
+如果在一行内排不下但是我们又要求能够在一行内排下又不被压缩，那么我们可以设置项目属性flex
+可以控制项目的放大和缩小
+
++ 不允许项目压缩，放大 flex:none
+注意：这个属性是设置在项目上的，之前的属性都是设置在容器上的
+
+设置之后的项目不会被挤压或放大
+
+可以指定某一个项目设置，这样只有这个项目不会被挤压或者压缩
+
++ 项目自动充满剩余空间
+如果一行有剩余的空间，希望项目能够均匀放大，撑满水平方向，我们应该给所有项目设置flex:1
+
+注意这里是给所有项目设置
+
++ 两栏自适应布局
+指的是一栏固定宽度，另一栏根据浏览器的宽度自适应
+html代码：
+```
+<div class="flex-auto">
+  <div class="static"></div>
+  <div class="flexible"></div>
+</div>
+```
+css代码：
+```
+.flex-auto {
+  display: flex;
+}
+.flex-auto .static {
+  width: 100px;
+  flex: none;
+}
+.flex-auto .flexible {
+  flex: 1;
+}
+```
+
++ 指定项目放大
+如果一行有剩余的情况下，可以指定某一个项目放大撑满剩余的空间
+
+只要给指定的项目设置flex:1就行
+
+
