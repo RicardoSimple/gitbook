@@ -29,4 +29,23 @@ ellipsis: 用省略号来表示被截断的文本
 注： 设置这些属性的元素必须是块状元素，而且需要设置合适的宽度
 
 #### 多行文本超出省略
++ 在webkit内核浏览器中
+将之前的white-space: nowrap去掉再添加以下代码
+```
+/* 隐藏超出部分 */
+overflow : hidden;
+/* 文本超出就用省略号 */
+text-overflow: ellipsis;
+/* 把对象作为弹性伸缩盒子模型显示 */
+display: -webkit-box;
+/* WebKit内核的浏览器的私有属性，设置文本超出2行就用省略号 */
+-webkit-line-clamp: 2;
+/* WebKit内核的浏览器的私有属性，设置或检索伸缩盒对象的子元素的排列方式 */
+-webkit-box-orient: vertical;
+```
+这些都是webkit内核私有的属性，其他内核浏览器不具备
+
++ 其他浏览器用js实现
+
+
 
