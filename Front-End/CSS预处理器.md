@@ -105,3 +105,28 @@ $width: 10px;
 ```
 + 插值法
 `#{}`插值几乎可以在Sass样式表中的任何地方使用
+
+```
+$name: "mail";
+$top-or-bottom: "top";
+$left-or-right: "left";
+
+.icon-#{$name} {
+  background-image: url("/icons/#{$name}.svg");
+  position: absolute;
+  #{$top-or-bottom}: 0;
+  #{$left-or-right}: 0;
+}
+```
+
+编译结果：
+```
+.icon-mail {
+  background-image: url("/icons/mail.svg");
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+```
+就相当于替换
+
