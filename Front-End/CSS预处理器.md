@@ -169,5 +169,89 @@ Sass中允许将一套CSS样式嵌入进另一套CSS样式中
 或者特殊一点的用法：
 ![](https://document.youkeda.com/P3-2-HTML-CSS/1.6/5.jpg?x-oss-process=image/resize,w_800/watermark,image_d2F0ZXJtYXNrLnBuZz94LW9zcy1wcm9jZXNzPWltYWdlL3Jlc2l6ZSx3XzEwMA==,t_60,g_se,x_10,y_10)
 
+#### 复用：mixin/include
+很多代码都有解决复用的方案
+
+可以用混合(mixin/include)来定义可重复使用的样式
++ 无参数混合
+css中使用重复类名来解决代码的复用
+css：
+```
+.square {
+  width: 100px;
+  height: 100px;
+}
+```
+html:
+```
+<div class="user-avatar square">...</div>
+<div class="admin-avatar square">...</div>
+```
+
+用mixin/include来解决代码复用：
+```
+@mixin square {
+  width: 100px;
+  height: 100px;
+}
+
+// 应用：
+.user-avatar {
+  @include square;
+}
+.admin-avatar {
+  @include square;
+}
+```
+
+上述代码定义了一个可以重复使用的块square
+用@mixin 定义，@include 引用
+
+编译结果：
+```
+.user-avatar {
+  width: 100px;
+  height: 100px;
+}
+
+.admin-avatar {
+  width: 100px;
+  height: 100px;
+}
+```
+
++ 有参数混合
+ + 参数无默认值
+ 稍作修改：
+ ```
+ @mixin square($size) {
+  width: $size;
+  height: $size;
+}
+
+// 应用
+.avatar {
+  @include square(100px);
+}
+```
+使用时向$size传入值
++ 参数有默认值
+直接定义默认值：
+```
+@mixin square($size: 100px) {
+  width: $size;
+  height: $size;
+}
+
+// 不传参数就会使用默认的值 100px
+.avatar {
+  @include square;
+}
+
+// 传入参数就会使用传入的值 200px
+.avatar-200 {
+  @include square($size: 200px);
+}
+```
 
 
