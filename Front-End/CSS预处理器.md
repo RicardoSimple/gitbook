@@ -130,3 +130,44 @@ $left-or-right: "left";
 ```
 就相当于替换
 
+#### 嵌套
+如下代码：
+```
+main .double .item .links {
+  text-align: center;
+}
+
+main .double .item .links a {
+  margin-right: 20px;
+}
+```
+如果遇到比较复杂的界面，为了不影响其他元素的样式，会把选择器写的尽可能精确，会很长
+
+sass的嵌套可以解决这个问题
+
+比如上面的两个选择器选择的是父子元素，在Sass中就可以写成：
+```
+main .double .item .links {
+  text-align: center;
+  a {
+    margin-right: 20px;
+  }
+}
+```
+把共同选择器提取了出来
+
++ 嵌套规则
+Sass中允许将一套CSS样式嵌入进另一套CSS样式中
+内层的样式将外层的选择器作为父选择器
+
+![嵌套](https://document.youkeda.com/P3-2-HTML-CSS/1.6/3.jpg?x-oss-process=image/resize,w_800/watermark,image_d2F0ZXJtYXNrLnBuZz94LW9zcy1wcm9jZXNzPWltYWdlL3Jlc2l6ZSx3XzEwMA==,t_60,g_se,x_10,y_10)
+
++ 父选择器 &
+在嵌套CSS样式时，有时需要直接使用父选择器，比如当给某个元素设置hover时：
+![hover](https://document.youkeda.com/P3-2-HTML-CSS/1.6/4.jpg?x-oss-process=image/resize,w_800/watermark,image_d2F0ZXJtYXNrLnBuZz94LW9zcy1wcm9jZXNzPWltYWdlL3Jlc2l6ZSx3XzEwMA==,t_60,g_se,x_10,y_10)
+
+或者特殊一点的用法：
+![](https://document.youkeda.com/P3-2-HTML-CSS/1.6/5.jpg?x-oss-process=image/resize,w_800/watermark,image_d2F0ZXJtYXNrLnBuZz94LW9zcy1wcm9jZXNzPWltYWdlL3Jlc2l6ZSx3XzEwMA==,t_60,g_se,x_10,y_10)
+
+
+
