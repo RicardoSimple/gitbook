@@ -260,3 +260,9 @@ html:
 用@import
 
 #### @each
+[each](https://www.cnblogs.com/ibabyli/p/9871382.html)
+#### @for
+```
+@for $i from 1 through 6{
+  //$i的值可以取1，2，3，4，5，6一般配合nth-child(),如果使用from ... to ..就只能取到5
+}
