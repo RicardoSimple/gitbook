@@ -456,7 +456,7 @@ console.log(index);
 
 + 去掉两端的空格：trim()
 
-```
+```javasc
 // 'here' 之前有一个空格，'apple' 之后有三个空格
 let str = ' here is an apple   ';
 const trimedStr = str.trim();

@@ -176,3 +176,300 @@ ps：如果传递的是一个对象，在对其进行取数据操作时先判读
 #### 自定义组件绑定原生事件
 
 ##### 事件修饰符
+
+自定义组件的根元素监听一个原生事件和html原生标签监听一个原生事件是有区别的
+
+App.vue中：
+
+```html
+<!-- 给自定义组件添加点击事件 print -->
+<Article
+  v-for="article in articleList"
+  :key="article.title"
+  :article="article"
+  @click="print(article)"
+></Article>
+```
+
+Article.vue中：
+
+```html
+<div class="article-title" @click="printTitle">{{ article && article.title }}</div>
+```
+
+method：
+
+```js
+// 在 `methods` 对象中定义方法
+methods: {
+  printTitle() {
+    alert("cilcked a title");
+  }
+}
+```
+
+只有原生标签上的事件触发
+
+让父组件中添加的print也执行，需要修饰符(之前有.prevent,.capture)
+
+父组件中添加`.native`修饰符
+
+```html
+<Article
+  v-for="article in articleList"
+  :key="article.title"
+  :article="article"
+  @click.native="print(article)"
+></Article>
+```
+
+这时两个事件都发生
+
+***除事件修饰符，Vue还提供按键修饰符，监听键盘事件***
+
+比如`@keyup.enter`监听回车，也可以用ASCII码比如
+
+`@keyup.13`也是回车
+
+#### 自定义事件
+
+一般都在子组件Article.vue中写事件（比如子组件中的点赞按钮）
+
+但是我们不能在子组件中直接修改父组件传来的prop数据，修改父组件中的原数据需要用自定义事件
+
+比如在子组件中使用自定义事件"upVote"实现点赞
+
+1. 给子组件绑定自定义事件
+   
+   App.vue中`v-on:upVote="handleLikes"`比如
+   
+   ```html
+   <!-- 自定义事件 upVote，调用该事件时会执行 handleLikes 方法 -->
+   <article
+     v-for="article in articleList"
+     :key="article.title"
+     :article="article"
+     v-on:upVote="handleLikes"
+   ></article>
+   ```
+   
+   `upVote`只是事件名，类似click
+
+2. 在Article.vue中调用自定义事件upVote
+   
+   ```html
+   <!-- 在 template 中直接调用自定义事件 upVote -->
+   <button @click="$emit('upVote')">点赞</button>
+   ```
+   
+   如果在click的同时还有其他事处理，可以写成
+   
+   ```html
+   <button @click="childEvent">点赞</button>
+   ```
+   
+   ```js
+   methods: {
+     childEvent: function() {
+       // 调用自定义事件 upVote
+       this.$emit('upVote');
+       // do other things
+     }
+   }
+   ```
+
+通过自定义事件的参数实现数据从子组件传递到父组件
+
+注意：在子组件调用时传参数方法：
+
+```html
+<button @click="childEvent">点赞</button>
+```
+
+```js
+methods: {
+  childEvent: function() {
+    // 调用自定义事件 upVote，这里的第二个参数最后会传到父组件中的 handleLikes 方法里
+    this.$emit('upVote', this.article);
+    // do other things
+  }
+}
+```
+
+这里也可以有多个参数，会成为对应的参数
+
+#### 自定义事件中的双向绑定
+
+修饰符`.sync`
+
+父组件中：
+
+```html
+<MyCount class="count" :count.sync="count"></MyCount>
+```
+
+count是已定义变量
+
+子组件中用`update:count`模式触发事件
+
+```html
+<div class="my-count">
+  <button @click="$emit('update:count', count+1)">加一</button>
+  {{ count }}
+</div>
+```
+
+```js
+props: ['count'],
+```
+
+#### 组件函数调用
+
+也可以将变量写在子组件然后父组件调用子组件方法来修改子组件中的visible
+
+调用子组件中的方法就是访问子组件实例，调用实例中的方法
+
+利用vue提供的ref属性来访问子组件实例并调用方法
+
+##### 调用子组件中的方法
+
+1. 给要访问的子组件添加ref属性
+   
+   ```html
+   <template>
+     <Modal ref="modal"></Modal>
+   </template>
+   ```
+   
+   现在就可以通过`this.$refs.modal`来访问自定义组件
+
+2. 调用子组件中的方法
+   
+   调用show方法
+   
+   ```js
+   <script>
+   export default {
+     methods: {
+       showModal() {
+         // 调用子组件中的 show 方法
+         this.$refs.modal.show();
+       }
+     }
+   };
+   </script>
+   ```
+
+##### ref访问子元素
+
+```html
+<template>
+  <div id="app">
+    <input ref="input" type="text" />
+    <button @click="focusInput">点击使输入框获取焦点</button>
+  </div>
+</template>
+```
+
+```js
+<script>
+export default {
+  name: 'app',
+  methods: {
+    focusInput() {
+      // this.$refs.input 访问输入框元素，并调用 focus() 方法使其获取焦点
+      this.$refs.input.focus();
+    }
+  }
+}
+</script>
+```
+
+#### 组件slot入门
+
+slot即插槽，相当于在子组件的dom中留一个位置，父组件如果需要就可以在插槽里添加内容
+
+##### 插槽的基础使用
+
+1. 在子组件Modal.vue中用slot标签预留一个位置，slot标签中的内容是后备内容(当父组件不在插槽中添加内容时显示的内容)，也可以为空
+   
+   ```html
+   <div class="modal-content">
+     <slot>这是个弹框</slot>
+     <div class="footer">
+       <button @click="close">close</button>
+       <button @click="confirm">confirm</button>
+     </div>
+   </div>
+   ```
+
+2. 在父组件中使用子组件
+   
+   在父组件中使用子组件，但不向自定义组件的插槽slot中添加内容
+   
+   ```html
+   <Modal :visible.sync="visible"></Modal>
+   ```
+   
+   使用子组件插入并插入个性化内容
+   
+   - ```html
+     <Modal :visible.sync="visible">个性化内容</Modal>
+     ```
+
+#### 组件slot进阶
+
+需要多个插槽的时候，比如
+
+```html
+<div class="modal" v-if="visible">
+  <div class="modal-content">
+    <header>
+      <!-- 我们希望把页头放这里 -->
+    </header>
+    <main>
+      <!-- 我们希望把主要内容放这里 -->
+    </main>
+    <footer>
+      <!-- 我们希望把页脚放这里 -->
+    </footer>
+  </div>
+</div>
+```
+
+`<slot>`元素有属性：name可以定义额外的插槽
+
+```html
+<div class="modal" v-if="visible">
+  <div class="modal-content">
+    <header>
+      <slot name="header"></slot>
+    </header>
+    <main>
+      <slot></slot>
+    </main>
+    <footer>
+      <slot name="footer"></slot>
+    </footer>
+  </div>
+</div>
+```
+
+有name属性是具名插槽，没有name属性是匿名插槽，默认name为default
+
+在向具名插槽提供内容时可以在一个`<template>`元素上使用v-slot指令，并以参数形式提供名称
+
+```html
+<Modal :visible.sync="visible">
+  <template v-slot:header>
+    <h1>Modal title</h1>
+  </template>
+
+  <div>main content</div>
+  <div>main content</div>
+
+  <template v-slot:footer>
+    <p>Modal footer</p>
+  </template>
+</Modal>
+```

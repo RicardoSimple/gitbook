@@ -29,7 +29,7 @@ SELECT
 FROM
 timi_adc
 WHERE
-hero_name LIKE '%孙%'A;
+hero_name LIKE '%孙%';
 ```
 
 两个结果公孙离，孙尚香

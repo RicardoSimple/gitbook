@@ -307,4 +307,4 @@ mysql -h 192.168.0.1 -uroot -Dyoukedadb<youkedadb.sql
 
 + `-uroot`表示使用root用户
 
-+ 如果sql语句过长适合这种方式替代-eyou192
++ 如果sql语句过长适合这种方式替代

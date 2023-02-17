@@ -276,3 +276,9 @@ DELETE FROM table_name [WHERE Clause]
 `DELETE FROM user`
 
 DELETE语句只会删除表中的数据，如果要删除表格，用之前的`DROP TABLE +表名`
+
+
+
+#### 查询个数使用count函数
+
+`SELECT COUNT(*) FROM`

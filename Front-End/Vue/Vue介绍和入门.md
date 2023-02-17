@@ -211,7 +211,7 @@ data中变量与变量之间用`,`隔开
 style中sass语法需要加上`lang="scss"`
 
 ```html
-<style lang="scss" scope>
+<style lang="scss" scoped>
   .title {    box-sizing: border-box;    width: 300px;    height: 30px;    margin: 0;    padding: 0 20px;    font-size: 18px;    font-weight: 700;    line-height: 30px;    color: white;    background: #fd6821;    border-radius: 6px;  }  .list {    list-style: none;    margin: 0;    padding: 0;    margin-top: 15px;    li {      box-sizing: border-box;      width: 300px;      height: 30px;      padding: 0 20px;      margin-bottom: 8px;      font-size: 14px;      line-height: 30px;      background: #8d999d;      color: white;      border-radius: 5px;    }  }
 </style>
 ```

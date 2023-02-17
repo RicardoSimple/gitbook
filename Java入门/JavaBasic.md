@@ -400,7 +400,3 @@ for (Map.Entry<Integer,String> entry : map.entrySet())
                   ", Value = " + entry.getValue());
  }
 ```
-
-```
-
-```
